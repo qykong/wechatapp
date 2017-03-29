@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section">
+    <view class="section_title">信息类型</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        {{array[index]}}
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <view class="section_title">内容</view>
+    <input bindinput="content" placeholder="请输入房源信息" />
+  </view>
+  <view class="section">
+    <view class="section_title">房源位置</view>
+    <button bindtap="chooseLoc">{{textLoc}}</button>
+  </view>
+  <view class="section">
+    <view class="section_title">微信号</view>
+    <input bindinput="wxid" placeholder="请输入微信号" />
+  </view>
+  <view class="section">
+    <view class="section_title">其它联系方式</view>
+    <input bindinput="other" placeholder="如果有，可以在此处输入其它联系方式（如电话）" />
+  </view>
+  <button bindtap="release">发布</button>
+</view>

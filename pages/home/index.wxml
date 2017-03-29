@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+    <view>
+    </view>
+
+    <view class="text">
+        <view class="line_flag"></view>
+        <text>已发布二手信息</text>
+    </view>
+
+    <block wx:for-items="{{items}}">
+        <view class="flex item">
+            <view class="item_left">
+                <image src="{{item.img}}"  data-url="{{item.img}}" bindtap="handleTap"/>
+            </view>
+            <view class="flex_auto item_middle">
+                <view><text class="title">{{item.title}}</text></view>
+                <view><text class="content">{{item.content}}</text></view>
+            </view>
+        </view>
+    </block>
+</view>
