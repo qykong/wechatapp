@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/houses/index",
     "pages/home/index",
     "pages/fabu/index",
     "pages/logs/logs"
@@ -17,17 +18,27 @@
     "selectedColor": "#3cc51f",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "pages/home/index",
-      "iconPath": "image/icon_normal.png",
-      "selectedIconPath": "image/icon_pressed.png",
-      "text": "最新二手"
-    }, {
-      "pagePath": "pages/fabu/index",
-      "iconPath": "image/icon_normal.png",
-      "selectedIconPath": "image/icon_pressed.png",
-      "text": "发布租房信息"
-    }]
+    "list": 
+    [
+      {
+        "pagePath": "pages/houses/index",
+        "iconPath": "image/icon_normal.png",
+        "selectedIconPath": "image/icon_pressed.png",
+        "text": "租房信息"
+      },
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "image/icon_normal.png",
+        "selectedIconPath": "image/icon_pressed.png",
+        "text": "最新二手"
+      }, 
+      {
+        "pagePath": "pages/fabu/index",
+        "iconPath": "image/icon_normal.png",
+        "selectedIconPath": "image/icon_pressed.png",
+        "text": "发布租房信息"
+      }
+    ]
   },
   "debug": true
 }

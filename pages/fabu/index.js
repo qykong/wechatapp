@@ -33,7 +33,7 @@ Page({
           },
           fail: function(res) {
             that.setData({
-                textLoc: "获取地址失败"
+                textLoc: "获取地址失败"//目前需要将手机里的privacy中的location->wechat设置为always，不能是whileusing
             })
           }
         })

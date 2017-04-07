@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+    <view>
+    </view>
+
+    <view class="text">
+        <view class="line_flag"></view>
+        <text>最新租房信息</text>
+    </view>
+
+    <block wx:for-items="{{items}}">
+        <view class="flex item">
+            <view class="flex_auto item_middle">
+                <view><text class="content">{{item.Content}}</text></view>
+                <view><text class="time">{{item.Time}}</text></view>
+            </view>
+        </view>
+    </block>
+</view>
