@@ -68,7 +68,7 @@ view.text text {
 .item_middle .content {
     font-size: 14px;
     color: #666;
-    overflow: hidden;
+    overflow: auto;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
