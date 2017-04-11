@@ -8,6 +8,7 @@ Page( {
     autoplay: true,
     interval: 3000,
     duration: 1200,
+    selected: -1
   },
 
   //事件处理函数
@@ -80,5 +81,17 @@ Page( {
         // complete
       }
     })
+  },
+  showalltext: function(event) {
+    let index = event.currentTarget.dataset['index']
+    if (this.data.selected === index) {
+      this.setData({
+        selected: -1
+      })
+    } else {
+      this.setData({
+        selected: index
+      })
+    }
   }
 })

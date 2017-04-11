@@ -68,10 +68,19 @@ view.text text {
 .item_middle .content {
     font-size: 14px;
     color: #666;
-    overflow: auto;
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     line-height: 15px;
     max-height: 60px;
+}
+
+.item_middle .content_full {
+    font-size: 14px;
+    color: #666;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 15px;
 }

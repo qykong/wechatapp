@@ -8,6 +8,7 @@ Page( {
     autoplay: true,
     interval: 3000,
     duration: 1200,
+    selected: -1
   },
 
   //事件处理函数
@@ -31,7 +32,7 @@ Page( {
       // header: {}, // 设置请求的 header
       success: function(res){
         // success
-        for (let i = (res.data.length-1); i >= 0; i--) {
+        for (let i = 0; i < res.data.length; i++) {
           if (res.data[i].content) {
             res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
           }
@@ -66,20 +67,16 @@ Page( {
       url: '../list/index?type=' + event.currentTarget.dataset.type
     })
   },
-  handleTap: function(event) {
-    console.log(event.target);
-    wx.previewImage({
-      // current: 'String', // 当前显示图片的链接，不填则默认为 urls 的第一张
-      urls: [event.target.dataset['url']],
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
+  showalltext: function(event) {
+    let index = event.currentTarget.dataset['index']
+    if (this.data.selected === index) {
+      this.setData({
+        selected: -1
+      })
+    } else {
+      this.setData({
+        selected: index
+      })
+    }
   }
 })

@@ -8,10 +8,10 @@
         <text>最新租房信息</text>
     </view>
 
-    <block wx:for-items="{{items}}">
-        <view class="flex item">
+    <block wx:for="{{items}}">
+        <view class="flex item" data-index="{{index}}" bindtap="showalltext">
             <view class="flex_auto item_middle">
-                <view><text class="content">{{item.Content}}</text></view>
+                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.Content}}</text></view>
                 <view><text class="time">{{item.Time}}</text></view>
             </view>
         </view>

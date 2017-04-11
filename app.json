@@ -22,21 +22,15 @@
     [
       {
         "pagePath": "pages/houses/index",
-        "iconPath": "image/icon_normal.png",
-        "selectedIconPath": "image/icon_pressed.png",
+        "iconPath": "image/black-home-icon.png",
+        "selectedIconPath": "image/green-home-icon.png",
         "text": "租房信息"
       },
       {
         "pagePath": "pages/home/index",
-        "iconPath": "image/icon_normal.png",
-        "selectedIconPath": "image/icon_pressed.png",
+        "iconPath": "image/black-hand-icon.png",
+        "selectedIconPath": "image/hand-icon.png",
         "text": "最新二手"
-      }, 
-      {
-        "pagePath": "pages/fabu/index",
-        "iconPath": "image/icon_normal.png",
-        "selectedIconPath": "image/icon_pressed.png",
-        "text": "发布租房信息"
       }
     ]
   },
