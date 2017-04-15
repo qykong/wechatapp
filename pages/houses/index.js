@@ -1,5 +1,27 @@
 //index.js
 //获取应用实例
+var getInfo = function() {
+  var that = this
+  wx.showLoading({title:'加载中', mask: true})
+  //playingList
+  wx.request({
+    url: 'https://cbrcircle.com/api/zufang',
+    method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+    // header: {}, // 设置请求的 header
+    success: function(res){
+      // success
+      for (let i = 0; i < res.data.length; i++) {
+        if (res.data[i].content) {
+          res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
+        }
+      }
+      res.data = res.data.reverse()
+      that.setData({ items: res.data });
+      wx.hideLoading();
+      wx.stopPullDownRefresh();
+    }
+  })
+}
 var app = getApp()
 Page( {
   data: {
@@ -23,44 +45,13 @@ Page( {
   },
 
   onLoad: function() {
-    var that = this
-
-    //playingList
-    wx.request({
-      url: 'https://cbrcircle.com/api/zufang',
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function(res){
-        // success
-        for (let i = 0; i < res.data.length; i++) {
-          if (res.data[i].content) {
-            res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
-          }
-        }
-        res.data = res.data.reverse()
-        that.setData({ items: res.data });
-      }
+    wx.setNavigationBarTitle({
+      title: '最新租房信息'
     })
-
+    getInfo.call(this)
   },
   onPullDownRefresh: function() {
-    var that = this
-
-    //playingList
-    wx.request({
-      url: 'https://cbrcircle.com/api/zufang',
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function(res){
-        // success
-        console.log(res)
-        for (let i = (res.data.length-1); i >= 0; i--) {
-          res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
-        }
-        that.setData({ items: res.data });
-      }
-    })
-    wx.stopPullDownRefresh();
+    getInfo.call(this)
   },
   go: function(event) {
     wx.navigateTo({
@@ -77,6 +68,11 @@ Page( {
       this.setData({
         selected: index
       })
+    }
+  },
+  onShareAppMessage: function() {
+    return {
+      title: '堪城圈-最新租房信息',
     }
   }
 })

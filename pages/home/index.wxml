@@ -2,12 +2,7 @@
 <view class="container">
     <view>
     </view>
-
-    <view class="text">
-        <view class="line_flag"></view>
-        <text>已发布二手信息</text>
-    </view>
-
+    
     <block wx:for-items="{{items}}">
         <view class="flex item">
             <view class="item_left">

@@ -7,15 +7,15 @@
   ],
   "window":{
     "backgroundTextStyle":"white",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "堪城圈",
-    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarBackgroundColor": "#62BAE2",
     "backgroundColor": "#F2f2f2",
     "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#dddddd",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#62BAE2",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": 

@@ -1,12 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-    <view>
-    </view>
-
-    <view class="text">
-        <view class="line_flag"></view>
-        <text>最新租房信息</text>
-    </view>
 
     <block wx:for="{{items}}">
         <view class="flex item" data-index="{{index}}" bindtap="showalltext">

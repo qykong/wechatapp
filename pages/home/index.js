@@ -1,5 +1,26 @@
 //index.js
 //获取应用实例
+var getInfo = function() {
+  var that = this
+  wx.showLoading({title:'加载中', mask: true})
+  //playingList
+  wx.request({
+    url: 'https://cbrcircle.com/api/ershou',
+    method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+    // header: {}, // 设置请求的 header
+    success: function(res){
+      // success
+      for (let i = 0; i < res.data.length; i++) {
+        if (res.data[i].content) {
+          res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
+        }
+      }
+      that.setData({ items: res.data });
+      wx.hideLoading();
+      wx.stopPullDownRefresh();
+    }
+  })
+}
 var app = getApp()
 Page( {
   data: {
@@ -23,43 +44,10 @@ Page( {
   },
 
   onLoad: function() {
-    var that = this
-
-    //playingList
-    wx.request({
-      url: 'https://cbrcircle.com/api/ershou',
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function(res){
-        // success
-        for (let i = 0; i < res.data.length; i++) {
-          if (res.data[i].content) {
-            res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
-          }
-        }
-        that.setData({ items: res.data });
-      }
-    })
-
+    getInfo.call(this)
   },
   onPullDownRefresh: function() {
-    var that = this
-
-    //playingList
-    wx.request({
-      url: 'https://cbrcircle.com/api/ershou',
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function(res){
-        // success
-        console.log(res)
-        for (let i = 0; i < res.data.length; i++) {
-          res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
-        }
-        that.setData({ items: res.data });
-      }
-    })
-    wx.stopPullDownRefresh();
+    getInfo.call(this)
   },
   go: function(event) {
     wx.navigateTo({
@@ -67,7 +55,6 @@ Page( {
     })
   },
   handleTap: function(event) {
-    console.log(event.target);
     wx.previewImage({
       // current: 'String', // 当前显示图片的链接，不填则默认为 urls 的第一张
       urls: [event.target.dataset['url']],
@@ -92,6 +79,11 @@ Page( {
       this.setData({
         selected: index
       })
+    }
+  },
+  onShareAppMessage: function() {
+    return {
+      title: '堪城圈-最新二手信息',
     }
   }
 })
