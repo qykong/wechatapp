@@ -3,8 +3,7 @@
   "pages/houses/index",
     "pages/home/index",
     "pages/fabu/index",
-    "pages/logs/logs",
-    "pages/"
+    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"white",

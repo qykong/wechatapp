@@ -14,16 +14,16 @@
             <view class="item_left">
               <view wx:if="{{item.image!=null}}">
                 <image src="https://dev.cbrcircle.com{{item.image}}"  data-url="https://dev.cbrcircle.com{{item.image}}" bindtap="handleTap"/>
-                </view>
-                <view wx:else>
+              </view>
+              <view wx:else>
                 <image src="{{logoUrl}}"  data-url="{{logoUrl}}" />
-                </view>
+              </view>
             </view>
             <view class="flex_auto item_middle" data-index="{{index}}" bindtap="showalltext">
                 <view><text class="title">{{item.item.title}}</text></view>
                 <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.item.content}}</text></view>
-                <view class='time'>{{item.item.time}}</view>
-            </view>
-        </view>
+            <view class="item_left flex_auto time">{{item.item.added_time}}</view>         
+            </view>                    
+        </view>      
     </block>
 </view>
