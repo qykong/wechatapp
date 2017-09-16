@@ -5,9 +5,11 @@ var getInfo = function() {
   wx.showLoading({title:'加载中', mask: true})
   //playingList
   wx.request({
-    url: 'https://cbrcircle.com/api/zufang',
+    url: 'https://dev.cbrcircle.com/zufang',
     method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-    // header: {}, // 设置请求的 header
+    header: {
+      'content-type': 'application/json'
+    }, // 设置请求的 header
     success: function(res){
       // success
       for (let i = 0; i < res.data.length; i++) {
@@ -15,7 +17,7 @@ var getInfo = function() {
           res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
         }
       }
-      res.data = res.data.reverse()
+      // res.data = res.data.reverse()
       that.setData({ items: res.data });
       wx.hideLoading();
       wx.stopPullDownRefresh();
@@ -30,9 +32,26 @@ Page( {
     autoplay: true,
     interval: 3000,
     duration: 1200,
-    selected: -1
+    selected: -1,
+    logoUrl: '../../image/logo.jpg'
   },
 
+  handleTap: function (event) {
+    // console.log(event.target);
+    wx.previewImage({
+      current: event.target.dataset.url, // 当前显示图片的链接，不填则默认为 urls 的第一张
+      urls: [event.target.dataset.url],//[event.target.style.src],
+      success: function (res) {
+        // success
+      },
+      fail: function () {
+        // fail
+      },
+      complete: function () {
+        // complete
+      }
+    })
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo( {

@@ -1,9 +1,10 @@
 {
   "pages":[
-    "pages/houses/index",
+  "pages/houses/index",
     "pages/home/index",
     "pages/fabu/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/"
   ],
   "window":{
     "backgroundTextStyle":"white",

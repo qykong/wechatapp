@@ -6,11 +6,16 @@
     <block wx:for-items="{{items}}">
         <view class="flex item">
             <view class="item_left">
-                <image src="{{item.img}}"  data-url="{{item.img}}" bindtap="handleTap"/>
+              <view wx:if="{{item.image!=null}}">
+                <image src="https://dev.cbrcircle.com{{item.image}}"  data-url="https://dev.cbrcircle.com{{item.image}}" bindtap="handleTap"/>
+                </view>
+                <view wx:else>
+                <image src="{{logoUrl}}"  data-url="{{logoUrl}}" />
+                </view>
             </view>
             <view class="flex_auto item_middle" data-index="{{index}}" bindtap="showalltext">
-                <view><text class="title">{{item.title}}</text></view>
-                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.content}}</text></view>
+                <view><text class="title">{{item.item.title}}</text></view>
+                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.item.content}}</text></view>
             </view>
         </view>
     </block>

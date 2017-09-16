@@ -1,11 +1,28 @@
 <!--index.wxml-->
 <view class="container">
-
-    <block wx:for="{{items}}">
+  <view></view>
+    <!-- <block wx:for="{{items}}">
         <view class="flex item" data-index="{{index}}" bindtap="showalltext">
             <view class="flex_auto item_middle">
-                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.Content}}</text></view>
-                <view><text class="time">{{item.Time}}</text></view>
+                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.item.content}}</text></view>
+                <view><text class="time">{{item.item.added_time}}</text></view>
+            </view>
+        </view>
+    </block> -->
+    <block wx:for-items="{{items}}">
+        <view class="flex item">
+            <view class="item_left">
+              <view wx:if="{{item.image!=null}}">
+                <image src="https://dev.cbrcircle.com{{item.image}}"  data-url="https://dev.cbrcircle.com{{item.image}}" bindtap="handleTap"/>
+                </view>
+                <view wx:else>
+                <image src="{{logoUrl}}"  data-url="{{logoUrl}}" />
+                </view>
+            </view>
+            <view class="flex_auto item_middle" data-index="{{index}}" bindtap="showalltext">
+                <view><text class="title">{{item.item.title}}</text></view>
+                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.item.content}}</text></view>
+                <view class='time'>{{item.item.time}}</view>
             </view>
         </view>
     </block>

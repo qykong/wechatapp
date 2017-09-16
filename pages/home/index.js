@@ -5,9 +5,11 @@ var getInfo = function() {
   wx.showLoading({title:'加载中', mask: true})
   //playingList
   wx.request({
-    url: 'https://cbrcircle.com/api/ershou',
+    url: 'https://dev.cbrcircle.com/ershou',
     method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-    // header: {}, // 设置请求的 header
+    header: {
+      'content-type': 'application/json'
+    }, // 设置请求的 header
     success: function(res){
       // success
       for (let i = 0; i < res.data.length; i++) {
@@ -16,6 +18,7 @@ var getInfo = function() {
         }
       }
       that.setData({ items: res.data });
+      console.log ("ershou:",res.data);
       wx.hideLoading();
       wx.stopPullDownRefresh();
     }
@@ -29,7 +32,8 @@ Page( {
     autoplay: true,
     interval: 3000,
     duration: 1200,
-    selected: -1
+    selected: -1,
+    logoUrl: "../../image/logo.jpg"
   },
 
   //事件处理函数
@@ -55,9 +59,10 @@ Page( {
     })
   },
   handleTap: function(event) {
+    // console.log (event.target);
     wx.previewImage({
-      // current: 'String', // 当前显示图片的链接，不填则默认为 urls 的第一张
-      urls: [event.target.dataset['url']],
+      current: event.target.dataset.url, // 当前显示图片的链接，不填则默认为 urls 的第一张
+      urls: [event.target.dataset.url],//[event.target.style.src],
       success: function(res){
         // success
       },
