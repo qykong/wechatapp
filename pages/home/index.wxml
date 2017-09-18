@@ -15,7 +15,7 @@
             </view>
             <view class="flex_auto item_middle" data-index="{{index}}" bindtap="showalltext">
                 <view><text class="title">{{item.item.title}}</text></view>
-                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.item.content}}</text></view>
+                <view><text  selectable="true" class="{{selected === index? 'content_full' : 'content'}}">{{item.item.content}}</text></view>
             </view>
         </view>
     </block>

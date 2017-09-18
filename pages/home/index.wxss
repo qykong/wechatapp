@@ -85,3 +85,9 @@ view.text text {
     -webkit-box-orient: vertical;
     line-height: 15px;
 }
+
+.time{
+    font-size: 20rpx;
+    color: #666;
+    line-height: 60rpx;
+}
