@@ -1,4 +1,9 @@
 @import '../home/index.wxss';
+@import '../../utils/util.wxss';
+
+.container {
+      background-color: #F2f2f2;
+}
 .container {
     background-color: #F2f2f2;
 }
@@ -51,7 +56,9 @@ view.text text {
     overflow: hidden;
     max-height: 20%;
 }
-
+.title{
+  padding-left: 20rpx;
+}
 .item_middle .title {
     font-size: 32rpx;
     color: #333;

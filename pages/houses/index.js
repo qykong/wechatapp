@@ -15,6 +15,7 @@ var getInfo = function() {
       for (let i = 0; i < res.data.length; i++) {
         if (res.data[i].content) {
           res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
+          if (res.data[i].wechatid ==='cute robot') res.data[i].wechatid = '租房群消息'
         }
       }
       // res.data = res.data.reverse()

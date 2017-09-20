@@ -20,9 +20,10 @@
     <view class="section_title">微信号</view>
     <input bindinput="wxid" placeholder="请输入微信号" />
   </view>
-  <view class="section">
+  <!-- <view class="section">
     <view class="section_title">其它联系方式</view>
     <input bindinput="other" placeholder="如果有，可以在此处输入其它联系方式（如电话）" />
-  </view>
+  </view> -->
+  
   <button bindtap="release">发布</button>
 </view>

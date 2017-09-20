@@ -12,17 +12,18 @@
     <block wx:for-items="{{items}}">
         <view class="flex item">
             <view class="item_left">
-              <view wx:if="{{item.image!=null}}">
-                <image src="https://dev.cbrcircle.com{{item.image}}"  data-url="https://dev.cbrcircle.com{{item.image}}" bindtap="handleTap"/>
+              <view wx:if="{{item.img.length!=0}}">
+                <image src="https://dev.cbrcircle.com{{item.img[0]}}"  data-url="https://dev.cbrcircle.com{{item.img[0]}}" bindtap="handleTap"/>
               </view>
               <view wx:else>
                 <image src="{{logoUrl}}"  data-url="{{logoUrl}}" />
               </view>
             </view>
             <view class="flex_auto item_middle" data-index="{{index}}" bindtap="showalltext">
-                <view><text class="title">{{item.item.title}}</text></view>
-                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.item.content}}</text></view>
-            <view class="item_left flex_auto time">{{item.item.added_time}}</view>         
+                
+                <view><view class="fa fa-wechat" style="font-size:40rpx;color:#62BAE2;float:left"></view><text class="title">{{item.wechatid}}</text></view>
+                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.content}}</text></view>
+            <view class="item_left flex_auto time">{{item.added_time}}</view>         
             </view>                    
         </view>      
     </block>
