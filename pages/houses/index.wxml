@@ -19,11 +19,11 @@
                 <image src="{{logoUrl}}"  data-url="{{logoUrl}}" />
               </view>
             </view>
-            <view class="flex_auto item_middle" data-index="{{index}}" bindtap="showalltext">
-                
+            <view class="flex_auto item_middle" data-index="{{index}}" bindtap="showalltext">                
                 <view><view class="fa fa-wechat" style="font-size:40rpx;color:#62BAE2;float:left"></view><text class="title">{{item.wechatid}}</text></view>
-                <view><text class="{{selected === index? 'content_full' : 'content'}}">{{item.content}}</text></view>
+                <view><text selectable='true' class="{{selected === index? 'content_full' : 'content'}}">{{item.content}}</text></view>
             <view class="item_left flex_auto time">{{item.added_time}}</view>         
+
             </view>                    
         </view>      
     </block>

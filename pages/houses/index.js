@@ -5,7 +5,7 @@ var getInfo = function() {
   wx.showLoading({title:'加载中', mask: true})
   //playingList
   wx.request({
-    url: 'https://dev.cbrcircle.com/zufang',
+    url: 'https://dev.cbrcircle.com/zufang/?format=json',
     method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
     header: {
       'content-type': 'application/json'
@@ -17,6 +17,9 @@ var getInfo = function() {
           res.data[i].content = res.data[i].content.replace(/(\r\n|\n|\r)/gm,"");
           if (res.data[i].wechatid ==='cute robot') res.data[i].wechatid = '租房群消息'
         }
+        // if (res.data[i].item.added_time) {
+        //   res.data[i].item.added_time = new Date(res.data[i].item.added_time).toLocaleString();
+        // }
       }
       // res.data = res.data.reverse()
       that.setData({ items: res.data });
