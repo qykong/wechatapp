@@ -1,0 +1,115 @@
+<view class="container">
+<form bindsubmit="formSubmit" report-submit="true">
+
+<view class="section">
+  <textarea maxlength="-1" placeholder="请输入你要发布的内容" name="content" />
+</view>
+
+<view class="upimages">
+<block wx:for="{{imglist}}" wx:key="unique">
+<view class="upimage noborder" data-img="{{item}}" bindlongtap="pic_remove"><image src="{{item}}"/></view>   
+</block>
+
+<view class="{{upimgbtt?'upimages_hidden':'upimage'}}" bindtap="choosePic">+</view>
+
+</view>
+
+<view class="classname" style="font-size:24rpx;color:gray;padding-left:10rpx;">长按可删除图片</view>
+
+<view class="locandphone">
+
+<view class="item">
+<view class="itemimg" ><image src="../../resource/images/static/menu_6.png"/></view>
+<view class="itemtext righticon itemtextwidth" style="flex:1" bindtap="open_map_chonse">{{gpsaddress}}</view>
+</view>
+<input type="text" value="{{gpsaddress}}" name="gpsaddress" style="display:none;" />
+<input type="text" value="{{longitude}}" name="longitude" style="display:none;" />
+<input type="text" value="{{latitude}}" name="latitude" style="display:none;" />
+<input type="text" value="{{tid}}" name="tid" style="display:none;" />
+<input type="text" value="{{tname}}" name="tname" style="display:none;" />
+<input type="text" value="{{parent_tid}}" name="parent_tid" style="display:none;" />
+<input type="text" value="{{parent_tname}}" name="parent_tname" style="display:none;" />
+
+<view wx:if="{{phone_isopen}}" class="item" style="border:1px solid #e6e1e1;">
+<view class="itemimg"><image src="../../resource/images/static/phone.png"/></view>
+<view class="itemtext" style="flex:1">
+<input type="number" placeholder="手机号码" name="phone" value="{{user.u_phone}}"/></view>
+</view>
+
+</view>
+
+
+<view wx:if="{{is_top}}" class="item" style="margin-top:10rpx;">
+<view class="itemtext" style="flex:1;">我要置顶</view>
+<view class="itemtext rightinput">
+<switch bindchange="switch1Change" name="istopstatus" checked="{{showView}}"/>
+</view></view>
+
+
+<view class="item {{showView?'view_show':'view_hide'}}">
+<view class="itemtext" style="flex:1;">置顶天数:</view>
+<view class="itemtext rightinput">
+
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="days" name="dayindex">
+<view class="picker" style="border-bottom:1px dashed #0066CC">已选置顶天数:<text class="t_red">{{objectArray[index].days}} </text>天▼</view>
+
+</picker>
+
+</view></view>
+
+<view class="item {{showView?'view_show':'view_hide'}}">
+<view class="itemtext" style="flex:1;">价格:</view>
+<view class="itemtext rightinput" >
+￥:<text class="t_red">{{objectArray[index].money}}</text>元
+</view></view>
+
+
+
+<view class="jubao_btn">
+<button formType="submit" type="primary" size="default" bindtap="primary">立即发布</button>
+</view>
+
+<view class="net_xieyi {{xieyi_isopen?'':'view_hide'}}">
+<checkbox-group bindchange="tapnet_xieyi" >
+  <label class="checkbox">
+    <checkbox value="1" checked="true"/>
+  </label>
+</checkbox-group>
+<text bindtap="powerDrawer" data-statu="open">已阅读关于发布协议</text>
+</view>
+
+
+
+
+</form>
+
+
+</view>
+<import src="../../../we7/resource/plugin/wxParse/wxParse.wxml"/>
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">   
+  <!--drawer content-->  
+  <view class="drawer_title">发布协议</view> 
+  <view class="drawer_content"> 
+   <view class="drawer_text" >
+   <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+   </view>
+   
+    <!-- <view class="top grid"> 
+      <label class="title col-0">标题</label> 
+      <input class="input_base input_h30 col-1" name="Email" value="仅供学习使用"></input> 
+    </view> 
+    <view class="top bottom grid"> 
+      <label class="title col-0">备注</label> 
+      <input class="input_base input_h30 col-1" name="bz"></input> 
+    </view> -->
+
+  </view> 
+  <view class="btn_ok" bindtap="powerDrawer" data-statu="close">关闭</view> 
+</view>
+
+
+<import src="../../resource/templates/goHome.wxml"/>
+<template is="goHomeSelf"/>

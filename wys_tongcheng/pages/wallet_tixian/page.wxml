@@ -1,0 +1,33 @@
+<view class="mt20 bgbs main_view">
+<form bindsubmit="formSubmit" report-submit="true">
+<view class='ml10 mr10 fz30 c57 bbm view_flex pt20 pm20'>
+<text style='flex:1'>提现到微信零钱</text>
+<text style='flex:1'>{{user.nickName}}</text>
+</view>
+<view class='ml10 mr10 '>
+<view class='fz26 mt20 bbm view_flex pt20 pm20'>
+<view style='flex:1' >实际提现 <text style='color:#1AAD19' wx:if="{{money_sj}}" class='fz30'>￥{{money_sj}}元</text> </view>
+<view style='flex:1'>手续费{{money_sxfl}}% <text class='c57' wx:if="{{money_sj}}" class='fz30'>￥{{money_sxf}}元</text></view>
+</view>
+<view class='view_flex pt60 pm60'>
+
+<view class='fz45'>￥</view>
+<view><input type='digit' name="money" focus="true" placeholder='请输入整数提现额度' bindinput="money_input" value='{{money}}'></input></view>
+
+</view>
+
+<view class='fz30 pt20 pm20' style='border-top:1px solid #eaeaea;color:gray;'>
+当前帐户余额:{{account}}元,
+<text style='color:#003366' bindtap='input_money' data-account='{{account}}'>全部提现</text></view>
+</view>
+
+<view class='fz24 pt10 pm10 ml10 mr10 wxgreen'>提示:实际提现金额,大于等于1元</view>
+
+
+<view class='cen pt20 pm20'>
+<button formType="submit" type='primary' size='default' style='width:80%;' disabled="{{btn_status}}">提  现</button>
+</view>
+
+</form>
+
+</view>

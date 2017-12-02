@@ -1,0 +1,78 @@
+.view_pay_main{
+  width: 96%;
+  margin:20rpx 2%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background:#99CC99;
+  min-height:220rpx;
+  height:auto;
+  border-radius:10rpx;
+}
+
+.view_pay{
+flex:1;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #ffffff;
+font-size: 30rpx;
+}
+
+.view_pay_money{
+flex:1;
+text-align: center;
+justify-content: center;
+align-items: center;
+color: #ffffff;
+font-size: 30rpx;
+}
+
+.view_time{
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+.view_pay_text{
+  font-size: 36rpx;
+  color:#ff5a00;
+}
+
+.view_right{
+flex:2;
+display: flex;
+justify-content: center;
+color: #ffffff;
+font-size: 36rpx;
+}
+
+.view_rmk{
+  display: inline-block;
+  font-size: 24rpx;
+}
+
+.view_end{
+text-align: right
+}
+
+.view_pay_button{
+ margin-top:10rpx; 
+ padding:10rpx 0;
+ display: flex;
+justify-content: flex-end;
+
+}
+.view_pay_button button{
+   background: #CC0033;
+   font-size: 28rpx;
+   margin-left: 0;
+   margin-right: 0;
+   width:80%;
+ }
+
+ .view_rmk{
+   font-size:24rpx;
+ }
+
+ .view_padding{
+   padding:10rpx 0;
+ }

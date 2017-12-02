@@ -1,0 +1,86 @@
+ 
+ <form report-submit="true" bindsubmit="order_submit">
+ <block>
+          <view class="ress-c-i flex gridXb">
+            <view class="goods-img mr10">
+              <image src="{{it.imgs_one}}" mode="aspectFill" wx:if="{{it.imgs_one}}"></image>
+            </view>
+            <view class="ress-cl fz30 sub">
+              <view style="line-height:100rpx;">
+              
+              <text wx:if="{{it.g_type!='商品'}}">{{it.g_type}}</text>
+              <text wx:else>{{it.g_name}}</text>
+              
+              {{it.g_name}}</view>
+            </view>
+            <view class="ress-cr linght fz24">￥{{it.money_sale}}</view>
+          </view>
+          <view class="ress-c">
+            <view class="ress-c-i flex">
+              <view class="ress-name f16 sub">数量：</view>
+              <view class="count-set tc">
+                <view class="gridFour num-add fl" bindtap="goods_number_change" id="jian">
+                  <text class="iconfont icon-move"></text>
+                </view>
+                <input type="number" value="{{goodsNum}}" class="buy-couts fl fz26" disabled="true" name='goodsNum' />
+                
+                   <input type="text" name="total_money" value="{{it.money_sale*goodsNum}}" style="display:none;" />
+                <view class="gridFour num-add fl" bindtap="goods_number_change" id="jia">
+                  <text class="iconfont icon-add"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+</block>
+
+
+<!-- 浮动购物车 start-->
+      <view class="ress-c-b">
+        <view class="ress-float gridXt flex">
+          <view class="float-price sub">
+            <view class="price-count f20 red">
+              <!-- <block wx:if='{{this_order_type==2}}'>
+                <text>￥{{all_g_price-data_list.is_huodong_shou_jiner-data_list.is_huodong_mianjian_jiner-this_quan_jiner+store_data.store_info.waimai_peisong_jiner}}</text>
+              </block> -->
+              <block >
+                <text>￥{{it.money_sale*goodsNum}}</text>
+              </block>
+            </view>
+          </view>
+          <view class="float-btn">
+            <button type="primary" formType="submit" class="float-btn-s" bindtap="go_select_paytype_bind">立即支付</button>
+          </view>
+        </view>
+      </view>
+      <!-- 浮动购物车 end-->
+      
+
+
+<!--支付方式选择 start-->
+      <!-- <view class="floatBox fbox">
+        <view class="fxz">
+          <view class="f18 tc">支付金额
+            <view class="f18 mt20 red">￥
+              <block wx:if='{{this_order_type==2}}'>
+                 <text>{{it.money_sale*goodsNum}}</text>
+              </block>
+              <block>
+                <text>{{it.money_sale*goodsNum}}</text>
+                <input type="text" name="total_goods_price" value="{{it.money_sale*goodsNum}}" style="display:none;" />
+                <input type="text" name="goods_id" value="{{it.id}}" style="display:none;" />
+              </block>
+            </view>
+          </view>
+         
+
+<button type="primary" class="mt20" formType="submit" disabled="{{btn_submit_disabled}}" loading="{{submitIsLoading}}">立即支付</button>
+        </view>
+        <view class="fbg" bindtap="go_select_paytype_bind"></view>
+      </view> -->
+      <!--支付方式选择 end-->
+
+</form>
+
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack_top" />

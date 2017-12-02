@@ -1,0 +1,27 @@
+form{width:100%;margin-top:10rpx;}
+.tip_red{text-indent:1.2em;font-size: 30rpx;margin:20rpx;color:#003366}
+.tip_height{margin:40rpx 0;}
+.tip_height_2{margin-top:20rpx;}
+
+.td_gd{width:100%;display: flex;margin:10rpx 0;}
+.td_lable{padding:10rpx;color:#003366}
+.td_input{padding:10rpx;flex: 1;}
+.td_input input{width:100%;border-bottom:1px dashed #003366;}
+
+.td_img{flex: 1;}
+
+.heaer{margin-bottom: 10rpx;font-size:28rpx;border-left:5px solid #003366;padding:18rpx 0;background: #ffffff;color:gray;padding-left: 10rpx;}
+
+.upimages{display: flex; flex-wrap:wrap;position: relative}
+.upimages_hidden{display:none;}
+.upimage{height:240rpx;width:100%;border:1px solid #e6e1e1;display: flex;justify-content: center;align-items: center;padding: 6rpx;}
+.upimage image{height:240rpx;width:100%;}
+.noborder{border:none;}
+
+.tip_img{
+  position: absolute;
+  left: 0px;
+  top:-5px;
+  height: 30px!important;
+  width: 30px!important;
+}

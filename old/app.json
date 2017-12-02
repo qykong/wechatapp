@@ -1,0 +1,39 @@
+{
+  "pages":[
+  "pages/houses/index",
+    "pages/home/index",
+    "pages/fabu/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"white",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "堪城圈",
+    "navigationBarBackgroundColor": "#62BAE2",
+    "backgroundColor": "#F2f2f2",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#62BAE2",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": 
+    [
+      {
+        "pagePath": "pages/houses/index",
+        "iconPath": "image/black-home-icon.png",
+        "selectedIconPath": "image/green-home-icon.png",
+        "text": "租房信息"
+      },
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "image/black-hand-icon.png",
+        "selectedIconPath": "image/hand-icon.png",
+        "text": "最新二手"
+      }
+      
+    ]
+  },
+  "debug": true
+}

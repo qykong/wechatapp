@@ -1,0 +1,46 @@
+<view class="pd pt20 pm20 bgff" bindtap='tap_store'>
+  <icon class="f_i dsf_ddinadf fl mt15" />
+  <view class="ov pl20 pr">
+    <view class="dian fz32 z6">
+      我的店铺
+    </view>
+    <view class="fz24 z9 mt10">
+      店铺信息修改,门店照片修改
+    </view>
+    <icon class="f_i dsf_rightsd" />
+  </view>
+
+  <view class="qc"></view>
+</view>
+
+
+
+<!-- 列表 -->
+
+<view class="pd pt20 pm20 btm bgbs mt10 mb10">
+<view class="dian fz32 pr" bindtap='tap_menu' data-val='goods_main'>商品管理<icon class="f_i right_icon" /></view>
+</view>
+
+<view class="pd pt20 pm20 btm bgbs mt10 mb10">
+<view class="dian fz32 pr" bindtap='tap_menu' data-val='goods_add'>发布商品<icon class="f_i right_icon" /></view>
+</view>
+
+<view class="pd pt20 pm20 btm bgbs mb10">
+<view class="dian fz32 pr" bindtap='tap_menu' data-val='order_list'>所有订单<icon class="f_i right_icon" /></view>
+</view>
+
+<view class="pd pt20 pm20 btm bgbs mb10">
+<view class="dian fz32 pr" bindtap='tap_menu' data-val='order_hexiao'>核销入口<icon class="f_i right_icon" /></view>
+</view>
+
+
+<view class="pd pt20 pm20 btm bgbs mt10 mb10">
+<view class="dian fz32 pr" bindtap='tap_menu' data-val='stroe_add'>新店入驻 <icon class="f_i right_icon" /></view>
+</view>
+
+
+
+
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />

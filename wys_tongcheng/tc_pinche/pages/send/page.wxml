@@ -1,0 +1,252 @@
+<!-- 提交拼车 -->
+<form bindsubmit="formSubmit" report-submit="true">
+
+<view class="dsf_sd_stxc cen">
+  <view class="dsf_sd_sdf {{item.cls?'act':''}}" wx:for="{{keiy}}" wx:key="unique" bindtap="dsf_ds_s" data-idx="{{index}}">
+    <view class="f_b pr ds_s_sdfs_s">
+      <icon class="f_i dsf_sd_sdcv {{item.img}}" />
+      <icon class="f_i success_d" />
+    </view>
+    <view class="z6 fz26">{{item.name}}</view>
+  </view>
+</view>
+
+<view class="pd pt20 pm20">
+  <view class="dsf_ds_sfgf_d yj4 ov z6">
+
+    <view class="dsf_dd_df_dgg2 pr bbm">
+      <icon class="yj dianer_sdf ac" />
+      <view class="fz30 " bindtap='chose_type'>{{pc_type}}▼</view>
+    </view>
+    <view class="dsf_dd_df_dgg pr bbm jz">
+      <icon class="yj dianer_sdf " />
+      <view class="fz26 dian" bindtap="open_map_chonse">{{address_start}}</view>
+    </view>
+    <view class="dsf_dd_df_dgg pr bbm jz">
+      <icon class="yj dianer_sdf ab " />
+      <view class="fz26 dian" bindtap="open_map_chonse2">{{address_end}}</view>
+    </view>
+
+
+
+    <view class="dsf_dd_df_dgg2 pr bbm">
+       <view wx:if="{{pc_type=='选择拼车类型'}}" class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds" />
+        <view class="fz30 mag_top ">
+          <input placeholder='座位/人数' name = 'num' type="digit"></input>
+        </view>
+      </view>
+      
+      <view wx:if="{{pc_type=='人找车'}}" class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds" />
+        <view class="fz30 mag_top ">
+          <input placeholder='人数' name = 'num' type="digit"></input>
+        </view>
+      </view>
+
+       <view wx:if="{{pc_type=='车找人'}}" class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds" />
+        <view class="fz30 mag_top ">
+          <input placeholder='座位/数' name = 'num' type="digit"></input>
+        </view>
+      </view>
+
+      
+
+      <view wx:if="{{pc_type=='车找货'}}" class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds" />
+        <view class="fz30 mag_top ">
+          <input placeholder='车辆/数' name = 'num' type="digit"></input>
+        </view>
+      </view>
+
+      <view wx:if="{{pc_type=='货找车'}}" class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds" />
+        <view class="fz30 mag_top ">
+          <input placeholder='货重/吨' name = 'num' type="digit"></input>
+        </view>
+      </view>
+
+
+
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ad" />
+
+        <view class="fz30 mag_top ">
+          <input placeholder='感谢费' name='geixiaofei' ></input>
+        </view>
+      </view>
+      <view class="qc"></view>
+    </view>
+<!--出发时间-->
+    <view class="dsf_dd_df_dgg2 pr bbm">
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ab" />
+        <view class="section">
+          <picker mode="date" value="{{date}}" start="{{date_start}}" end="{{date_start2}}" bindchange="bindDateChange">
+            <view class="picker fz30">
+               {{dates}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ab" />
+        <view class="section">
+          <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+            <view class="picker fz30">
+               {{times}}
+            </view>
+          </picker>
+
+        </view>
+      </view>
+
+      <view class="qc"></view>
+    </view>
+<!--开始时间-->
+    <view wx:if="{{type=='长期拼车'}}" class="dsf_dd_df_dgg2 pr bbm">
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ab" />
+        <view class="section">
+          <picker mode="date" value="{{dates_start}}" start="{{date_start}}" end="2222-1-23" bindchange="bindDateChangeStart">
+            <view class="picker fz30">
+               {{dates_start}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ab" />
+        <view class="section">
+          <picker mode="time" value="{{times_start}}" start="00:00" end="23:59" bindchange="bindTimeChangeStart">
+            <view class="picker fz30">
+               {{times_start}}
+            </view>
+          </picker>
+
+        </view>
+      </view>
+
+      <view class="qc"></view>
+    </view>
+<!--结束时间-->
+    <view wx:if="{{type=='长期拼车'}}" class="dsf_dd_df_dgg2 pr bbm">
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ab" />
+        <view class="section">
+          <picker mode="date" value="{{dates_end}}" start="{{date_start}}" end="2222-1-23" bindchange="bindDateChangeEnd">
+            <view class="picker fz30">
+               {{dates_end}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ab" />
+        <view class="section">
+          <picker mode="time" value="{{times_end}}" start="00:00" end="23:59" bindchange="bindTimeChangeEnd">
+            <view class="picker fz30">
+               {{times_end}}
+            </view>
+          </picker>
+
+        </view>
+      </view>
+    </view>
+
+    <view class="dsf_dd_df_dgg2 pr bbm" style='height:305rpx;line-height:28rpx;' wx:if="{{pc_type=='人找车' || pc_type=='选择拼车类型'}}">
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ac" />
+        <view class="fz30 mag_top ">         
+          <textarea placeholder="出行要求" name='yaoqiu' maxlength="-1"/>
+        </view>
+      </view>     
+    </view>
+
+    <view class="dsf_dd_df_dgg2 pr bbm" style='height:305rpx;line-height:28rpx;' wx:if="{{pc_type=='车找人'}}">
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ac" />
+        <view class="fz30 mag_top ">
+          <textarea placeholder="拼车说明" name='yaoqiu' maxlength="-1"/>
+        </view>
+      </view>     
+    </view>
+
+      <view class="dsf_dd_df_dgg2 pr bbm" style='height:305rpx;line-height:28rpx;' wx:if="{{pc_type=='车找货'}}">
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ac" />
+        <view class="fz30 mag_top ">          
+         <textarea placeholder="车辆详情说明" name='yaoqiu' maxlength="-1"/>
+        </view>
+      </view>     
+    </view>
+
+      <view class="dsf_dd_df_dgg2 pr bbm" style='height:305rpx;line-height:28rpx;' wx:if="{{pc_type=='货找车'}}">
+      <view class="pr dsf_sd_sd_sf">
+        <icon class="f_i dsf_sd_ds ac" />
+        <view class="fz30 mag_top ">
+          <textarea placeholder="货物详情" name='yaoqiu' maxlength="-1"/>
+        </view>
+      </view>     
+    </view>
+
+
+    <view class="dsf_dd_df_dgg2 pr bbm">
+      <view class="pr dsf_sd_sd_sf ab">
+        <icon class="f_i dsf_sd_ds ae" />
+        <view class="fz30 mag_top ">
+          <input placeholder='手机号码' name='u_phone' value='{{u_phone}}'></input>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="dsf_dd_df_dgg2 pr bbm">     
+      <view class="pr dsf_sd_sd_sf ab">
+        <icon class="f_i dsf_sd_ds af" />
+        <view class="fz30 mag_top ">
+          <input placeholder='补充说明' name='buchong'></input>
+        </view>
+      </view>
+    </view>
+
+
+
+    
+
+
+
+  </view>
+</view>
+
+
+
+
+<view class="mt20 pd  ">
+  <button formType="submit" type="primary" size="default" bindtap="primary" class="que_fau fz30 cf">确认发布</button>
+</view>
+
+</form>
+
+
+
+
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" data-mtype="menu" wx:if="{{showModalStatus_sheet}}"></view>
+<!--使用animation属性指定需要执行的动画-->
+<scroll-view scroll-y="true" animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus_sheet}}">
+  <!--drawer content-->
+  <view class="drawer_title" wx:for="{{mtype_list}}" wx:key="unique" bindtap="tap_add_sheet" data-pc_type="{{item.pc_type}}">{{item.pc_type}}</view>
+  <view class="btn_ok" bindtap="powerDrawer" data-statu="close" data-mtype="menu">关闭</view>
+</scroll-view>
+
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />

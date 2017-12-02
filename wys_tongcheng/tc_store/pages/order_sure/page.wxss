@@ -1,0 +1,45 @@
+@import '../../resource/css/base_main.wxss';
+.goods-img image{
+  height: 100rpx;
+  width: 100rpx;
+}
+.buy-couts{
+  width:70rpx;
+  text-align: center;
+}
+.flex > .sub{
+  flex: 1;
+}
+.num-add{width:50rpx;line-height:50rpx;height:50rpx;text-align: center;}
+.gridFour{
+  border:1px solid #ececec;
+  /* font-size:24rpx;
+  padding:4rpx 8rpx; */
+}
+.ress-c{ background: #fff;}
+.ress-c-i{ padding:30rpx 20rpx 30rpx 0; margin-left: 30rpx; width: auto;}
+.ress-cl{ width: 50%;}
+.ress-cr,.ress-cc{ margin-left: 20rpx; display: -webkit-box; -webkit-box-align:center;}
+
+.ress-c-b{ height: 132rpx;}
+.ress-float{ height: 92rpx; background: #fff; position: fixed; left: 0; right: 0; bottom: 0; z-index: 99;}
+.float-price{ padding: 0 30rpx; line-height: 92rpx;}
+.float-btn-s{ border-radius: 0; width: 240rpx; height: 92rpx; line-height: 92rpx;}
+.float-btn-s::after{ display: none;}
+.flex{
+  display: flex;
+}
+.linght{
+  color:#b2b2b2;
+}
+
+
+
+
+
+.fxz{background: #fff; position: absolute; left: 0; bottom: 0; right: 0; padding: 50rpx; z-index: 9;}
+.fbg{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8);}
+.fxz-item{ padding:30rpx 0; display: block;}
+.fxz-item.active{ background: #eee;}
+.fxz-item:last-child::before{ display: none;}
+

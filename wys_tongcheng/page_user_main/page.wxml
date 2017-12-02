@@ -1,0 +1,91 @@
+<!-- 我的 -->
+<view class="user_top pd pr">
+  <!-- xiaosh为空的话就没一点  -->
+  <icon class="dsf_ddsf f_i {{xiaosh}}" />
+  <view class="fl user_sd_sfg pr" wx:if="{{ubinfo.avatarUrl}}">
+    <image src="{{ubinfo.avatarUrl}}" class=" cz"></image>
+  </view>
+  <view class="ov pl40 cf">
+    <view class="fz40 mt50">{{ubinfo.nickName}}</view>
+    <view class="">
+      <icon class="f_i dsf_sd_sfgx cz" />
+      <text class="fz26 ml5">13538190372</text>
+    </view>
+  </view>
+</view>
+<view class="bgff box cen">
+  <navigator url="{{item.url}}" class="box_a pm20" wx:for="{{sd_sd_ds}}">
+    <view class="dsf_dffg">
+      <icon class="f_i dfdsf_dfg cz {{item.img}}" />
+    </view>
+    <view class="fz28 z3">
+      {{item.name}}
+    </view>
+  </navigator>
+  <view class="qc"></view>
+</view>
+
+
+<view class="mt20 bgff " wx:for="{{df_dfx}}">
+  <view class="pd pt20 pm20 fz30 z6 bbm">
+    {{item.name}}
+  </view>
+  <view class="">
+    <navigator url="{{item.url}}" class="df_ddf_sfgx cen pm20 pt10" wx:for="{{item.df_sf}}">
+      <view class="dsf_dffg">
+        <view class="pr sdf_df_fgxfg">
+          <icon class="f_i df_df_dfgx cz {{item.img}}" />
+          <text class="yj dsf_d_sfgx" wx:if="{{item.num>0}}">1</text>
+        </view>
+      </view>
+      <view class="fz28 z3">
+        {{item.name}}
+      </view>
+    </navigator>
+    
+    <view class="qc"></view>
+  </view>
+
+</view>
+
+
+<!-- <view class="pt20 pm20 bgff red fz30 mt20 cen">
+  退出登录
+
+  <icon class="f_i right_icon" />
+</view> -->
+
+
+
+
+<!-- 底部 -->
+<!-- <view class="hggfsdf_sd box cen">
+  <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf cz" />
+    </view>
+    同城
+  </navigator>
+  <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ab cz" />
+    </view>
+    商家
+  </navigator>
+  <navigator class="box_a ">
+    <i class="f_i adsfsf_sd"></i>
+  </navigator>
+  <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ac cz" />
+    </view>
+    拼车
+  </navigator>
+  <navigator class="box_a fz28 act">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ad cz" />
+    </view>
+    我的
+  </navigator>
+
+</view> -->

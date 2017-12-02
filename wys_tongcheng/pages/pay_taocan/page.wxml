@@ -1,0 +1,24 @@
+<view class="container">
+
+<view class='view_pay_main' wx:for="{{list_toacn}}" wx:key="unique" bindtap='tap_pay' data-tcid='{{item.id}}' data-pmoney='{{item.pay_money}}'>
+<view class='view_pay_money'>充值: <text class='view_pay_text' >{{item.pay_money}}</text> 元
+
+<view wx:if="{{item.song_integral>0}}">赠送:<text class='view_pay_text' style='color:#ffffff'>{{item.song_integral}}</text>积分</view>
+
+<view class='view_time'>{{item.lasttime}}</view>
+
+<view class='view_pay_button'> <button formType="submit" type="default" type="primary" size="default" bindtap="default"> 确认充值 </button> </view>
+</view>
+
+
+
+<view class='view_pay view_rmk view_padding'>
+<view class='view_rmk' wx:if="{{item.rmk}}">套餐说明:{{item.rmk}}</view>
+
+
+</view>
+</view>
+
+
+
+</view>

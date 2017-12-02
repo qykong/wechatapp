@@ -1,0 +1,42 @@
+@import '../goods_main/page.wxss';
+
+.dsdf_sdsfsg{
+  width:100rpx;
+  height: 100rpx;
+}
+
+.dsf_s_sfgx2 {
+position:absolute;
+left:0px;
+bottom:5rpx;
+background:#8C8C8C;
+color:#fff;
+padding:2px 10rpx;
+
+}
+
+.dsf_s_sfgx3 {
+position:absolute;
+right:0px;
+top:0rpx;
+
+color:#8C8C8C!important;
+padding:2px 10rpx;
+
+}
+
+
+.dsf_s_sfgx4 {
+position:absolute;
+right:0px;
+top:0rpx;
+color:#fff!important;
+padding:2px 10rpx;
+}
+
+
+
+/*二维码*/
+.scand{background: #fff;padding: 20rpx 0;}
+.scand-img{width: 140px;height: 140px;margin: 0 auto 20rpx;}
+.scand-img image{width: 100%;height: 100%;}

@@ -1,0 +1,18 @@
+<import src="../../resource/templates/tmpl_order.wxml"/>
+
+<view class="container">
+
+
+<block wx:for="{{m_list_0}}" wx:key="unique">
+ <template is="tmpl_account_tx_list" data="{{item}}"/>
+</block>
+
+<block wx:if="{{m_list_0_last}}">
+<template is="lastdata"/>
+</block>
+
+</view>
+
+
+<import src="../../resource/templates/goHome.wxml"/>
+<template is="navigateBack"/>

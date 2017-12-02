@@ -1,0 +1,29 @@
+/*照片1半f列表*/
+.bpic_list{
+ 
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+  align-items:flex-start;
+  justify-content:flex-start;
+  margin:0 1%;
+ 
+}
+.bpic_list .menu_icon{
+  width:100%;
+  text-align: center;
+  height:490rpx;
+  margin-bottom: 15rpx;
+   padding:10rpx 0;
+    background: #ffffff;
+}
+.bpic_list .menu_icon image{
+  width:98%;
+  height:440rpx;
+  border-radius:10rpx;
+}
+.bpic_list .menu_text{
+   font-size: 26rpx;
+   height: 30rpx;
+   line-height: 30rpx;
+}

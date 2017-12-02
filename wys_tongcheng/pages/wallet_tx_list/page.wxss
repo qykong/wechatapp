@@ -1,0 +1,37 @@
+@import '../wallet_list/page.wxss';
+
+.view_pay_main{
+  width: 96%;
+  /* margin:10rpx 2%; */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background:#ffffff;
+  min-height:120rpx;
+  border-radius:10rpx;
+}
+
+.flex_view{
+   display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.top_main{
+   width: 96%;
+  margin:10rpx 2%;
+ 
+  background:#ffffff;
+  min-height:120rpx;
+  border-radius:10rpx;
+}
+
+.ot_main{
+   background:#fff;
+    width: 96%;
+    margin:10rpx 2%;
+  
+}
+
+.t_green{
+  color:#1AAD16;
+}

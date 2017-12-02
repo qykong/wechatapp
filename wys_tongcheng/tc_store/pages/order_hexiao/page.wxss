@@ -1,0 +1,16 @@
+@import '../../resource/css/base_main.wxss';
+
+.flex_btn{
+display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.qr_btn{
+  width: 400rpx;
+  height: 400rpx;
+  border:1px solid red;
+  background:#ff5a00;
+  color:#fff;
+  border-radius:50%;
+}

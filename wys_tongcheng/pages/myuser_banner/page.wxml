@@ -1,0 +1,87 @@
+<import src="../../resource/templates/msg_temp.wxml"/>
+
+
+
+
+<view class='tomsg_banner' wx:if="{{show_toMy_send}}" >
+<view class="hezuoimage">
+  <image src="../../resource/images/static/hezuo.png"></image>
+</view>
+<view>
+<view style='font-size:30rpx;'>我要广告位</view>
+<view style='font-size:26rpx;'>超低成本，本地宣传，简单有效，方便快捷！</view>
+<view style='font-size:24rpx;color:gray;'>第一步、选择同城消息 租广告位</view>
+<view style='font-size:24rpx;color:gray;'>第二步、选择广告位</view>
+<view style='font-size:24rpx;color:gray;'>第三步、上传广告位展示图片并支付</view>
+<view style='font-size:24rpx;color:gray;'>第四步、审核通过立即上线</view>
+
+<view style='font-size:30rpx;text-align:right;margin-bottom:10rpx;'>
+<button type="primary" size="mini" bindtap="default" style='background:#ff5a00' bindtap='tap_my_msglist'> 选择信息、去租广告位</button>
+
+</view>
+</view>
+
+
+</view>
+
+
+
+<view class="container">
+<block wx:for="{{m_list_0}}" wx:key="id" wx:for-index="idx">
+<view class="v_banner">
+<view class="v_img"><image src="{{item.img}}"></image></view>
+<view class="v_text">
+<text>位置:{{item.bn_btypename}}</text>
+<text>每日费用:￥:{{item.bn_daymoney}}元</text>
+<text>排序:第{{item.bn_pxh}}位</text>
+</view>
+
+<view class="v_text">
+<text>天数:{{item.bn_days}}天</text>
+<text>总费用:￥:<text class="t_red t_bold">{{item.bn_total_money}}</text>元</text>
+</view>
+
+
+
+<view class="v_text">
+<text wx:if="{{item.paystate==1}}" class="t_green">支付状态:<text class="t_green">已支付</text></text>
+<text wx:else >支付状态:<text class="t_blue">未支付</text></text>
+<text>创建时间:{{item.crtime}}</text>
+</view>
+
+<view wx:if="{{item.paystate==0}}" class="v_text">
+<text>支付操作</text>
+<text wx:if="{{item.dopaystatus}}">支付截止:{{item.lasttime}}</text>
+<button wx:if="{{item.dopaystatus}}" size="mini" type="primary" bindtap="btn_pay" data-idx="{{idx}}" data-bn_total_money="{{item.bn_total_money}}" data-oncode="{{item.oncode}}">支付</button>
+<text wx:else>过期</text>
+</view>
+
+
+<view wx:if="{{item.paystate==1}}" class="v_text">
+<text wx:if="{{item.audit_status==1}}" class="t_green">审核状态:<text class="t_green">已审核</text></text>
+<text wx:else >审核状态:<text class="t_blue">待审核</text></text>
+<text wx:if="{{item.audit_status==1}}">截止日期:{{item.banner_lasttime}}</text>
+</view>
+
+
+<view class="v_text">
+<text>其它操作</text>
+
+<text class="msg_conent_tag_del" bindtap="tapopenmsg" data-mid="{{item.m_id}}" data-bnid="{{item.id}}" data-idx="{{idx}}" data-paystate="{{item.paystate}}" >其它操作</text>
+
+
+</view>
+
+</view>
+</block>
+
+<block wx:if="{{m_list_0_last}}">
+<template is="lastdata"/>
+</block>
+
+</view>
+
+
+
+<import src="../../resource/templates/goHome.wxml"/>
+<template is="goHomeSelf"/>

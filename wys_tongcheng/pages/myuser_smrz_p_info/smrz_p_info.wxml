@@ -1,0 +1,105 @@
+<view class="container">
+
+<view class="tip_red tip_height_2">
+国家网信办发布了《互联网论坛社区服务管理规定》和《互联网跟帖评论服务管理规定》,现对所有发布消息的用户实行实名认证。
+
+</view>
+
+<view wx:if="{{audit_status}}" class="tip_red tip_height_2" style="width:100;text-align:center;">
+<text wx:if="{{audit_status}}" style="color:red;">{{audit_status}}</text>
+<view style="text-align:left;">{{audit_rmk}}</view>
+</view>
+
+<form bindsubmit="formSubmit" report-submit="true">
+<view class="td_gd">
+<text class="td_lable">真实姓名</text>
+<view class="td_input">
+<input type="text" placeholder="请输入真实姓名" name="p_name" value="{{p_name}}"/>
+</view>
+</view>
+
+
+<view class="td_gd">
+<text class="td_lable">身份证号</text>
+<view class="td_input">
+<input type="idcard" placeholder="请输入18位身份证号码" name="p_sfid" value="{{p_sfid}}"/>
+</view>
+</view>
+
+
+<view class="td_gd">
+<text class="td_lable">手机号码</text>
+<view class="td_input">
+<input type="number" placeholder="请输入手机号码" name="p_phone" value="{{p_phone}}"/>
+</view>
+<view class="td_rbtn">
+<button type="warn" size="mini" bindtap="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="padding:0 0.34em;">获取微信手机号码</button>
+</view>
+</view>
+
+<view class="heaer">以下请点击相应身份证照片示例类型上传照片,长按可删除</view>
+
+<view class="td_gd">
+<text class="td_lable">身份正面</text>
+<view class="td_img">
+
+<view class="upimages">
+<view wx:if="{{img1}}" class="upimage noborder" data-img="{{img1}}" bindlongtap="pic_remove" data-img='img1'><image src="{{img1}}"/></view>   
+<view class="{{img1!=''?'upimages_hidden':'upimage'}}" bindtap="choosePic" data-img='img1'>
+<image src="{{tip_img1}}" class="tip_img"/>
+
+<image src="{{tp_img1}}"/>
+
+</view>
+</view>
+
+</view>
+</view>
+
+
+<view class="td_gd">
+<text class="td_lable">身份背面</text>
+<view class="td_img">
+
+<view class="upimages">
+<view wx:if="{{img2}}" class="upimage noborder" data-img="{{img2}}" bindlongtap="pic_remove" data-img='img2'><image src="{{img2}}"/></view>   
+<view class="{{img2!=''?'upimages_hidden':'upimage'}}" bindtap="choosePic" data-img='img2'>
+<image src="{{tip_img2}}" class="tip_img"/>
+<image src="{{tp_img2}}"/>
+</view>
+</view>
+
+</view>
+</view>
+
+
+
+<view class="td_gd">
+<text class="td_lable">身份手持</text>
+<view class="td_img">
+
+<view class="upimages">
+<view wx:if="{{img3}}" class="upimage noborder" data-img="{{img3}}" bindlongtap="pic_remove" data-img='img3'><image src="{{img3}}"/></view>   
+<view class="{{img3!=''?'upimages_hidden':'upimage'}}" bindtap="choosePic" data-img='img3'>
+<image src="{{tip_img3}}" class="tip_img"/>
+<image src="{{tp_img3}}"/>
+</view>
+</view>
+
+</view>
+</view>
+
+
+
+<view style='margin-bottom:10px;'>
+<button formType="submit" type="primary" size="default" bindtap="primary">提交实名资料</button>
+</view>
+
+</form>
+
+</view>
+
+
+
+<import src="../../resource/templates/goHome.wxml"/>
+<template is="goHomeSelf"/>

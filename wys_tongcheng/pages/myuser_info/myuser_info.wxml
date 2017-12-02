@@ -1,0 +1,74 @@
+<view class="container">
+<form bindsubmit="formSubmit">
+
+<view class="i_input">
+<view class="i_lable">
+<text>微信呢称</text>
+</view>
+<view class="i_ipt">
+<input type="text" placeholder="请输入微信呢称" value="{{user.u_nickname}}" name="u_nickname" />
+</view>
+</view>
+
+
+<view class="i_input">
+<view class="i_lable">
+<text>性别</text><text class="c_gray"></text>
+</view>
+<view class="i_ipt">
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" >
+    <radio value="1" checked="{{sexvalue==1}}"/>男
+  </label>
+
+   <label class="radio" >
+    <radio value="0" checked="{{sexvalue==0}}"/>女
+  </label>
+</radio-group>
+
+</view>
+</view>
+
+
+
+<view class="i_input">
+<view class="i_lable">
+<text>手机号</text><text class="c_gray">联系手机号码</text>
+</view>
+<view class="i_ipt">
+<input type="text" placeholder="请输入手机号码" value="{{user.u_phone}}" name="u_phone"  />
+</view>
+</view>
+
+<view class="i_input">
+<view class="i_lable">
+<text>地址</text><text class="c_gray">联系地址</text>
+</view>
+<view class="i_ipt">
+<input type="text" placeholder="请输入联系地址" value="{{user.u_address}}" name="u_address"  />
+</view>
+</view>
+
+<view class="i_input">
+<view class="i_lable">
+<text>介绍</text><text class="c_gray">(200字以内)</text>
+</view>
+<view class="i_ipt">
+<textarea placeholder="详细介绍下自己" value="{{user.u_rmk}}" name="u_rmk"  style="height:200rpx;"/>
+</view>
+</view>
+
+
+
+<view class="classname" style="100%;">
+<button type="primary" size="default" formType="submit" style="width:100%;">保存提交</button>
+</view>
+
+</form>
+
+</view>
+
+
+
+<import src="/we7/pages/templates/footer.wxml"/>
+<template is="footerWx" data="{{...tabBar}}"/>

@@ -1,0 +1,32 @@
+<view class="container">
+<form bindsubmit="formSubmit" report-submit="true">
+<input type="text" value="{{mid}}" name="mid" style="display:none;" />
+
+
+<view class="jb_text">请填写举报原因</view>
+
+<view class="section">
+  <textarea placeholder="请填写举报原因" value="{{init_text}}" bindinput="content_input" name="content" />
+</view>
+
+<view class="qk_tips_txt">快捷原因选择:</view>
+<view class="qk_tips">
+<text bindtap="tap_txt" data-text="电话虚假(空号、无人接听)">电话虚假(空号、无人接听)</text>
+<text bindtap="tap_txt" data-text="谣言、虚假信息">谣言、虚假信息</text>
+<text bindtap="tap_txt" data-text="侵权类">侵权类</text>
+<text bindtap="tap_txt" data-text="政治、暴恐类">政治、暴恐类</text>
+<text bindtap="tap_txt" data-text="色情类、低俗类">色情、低俗类</text>
+<text bindtap="tap_txt" data-text="赌博、诈骗类">赌博、诈骗类</text>
+<text bindtap="tap_txt" data-text="其他">其他</text>
+
+<text bindtap="tap_txt" data-text="泄露个人人信息">泄露个人人信息</text>
+
+
+</view>
+
+<view class="jubao_btn">
+<button formType="submit" type="primary" size="default">举报提交</button>
+
+</view>
+</form>
+</view>

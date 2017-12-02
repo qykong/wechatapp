@@ -1,0 +1,13 @@
+form{width: 100%;}
+.user_logo{margin-top:10rpx;}
+
+.user_logo{}
+.user_logo image{width:148rpx;height:148rpx;border-radius: 50%;}
+.user_nickname{margin-bottom: 30rpx;}
+
+.c_gray{color: gray;}
+.i_input{padding: 10rpx;background: #ffffff;margin-bottom: 10rpx;}
+.i_lable{display: flex;justify-content: space-between;align-items: center;}
+.i_lable text{padding:10rpx;font-size:28rpx;width:auto;}
+.i_ipt{padding:0rpx 30rpx;}
+.i_ipt input{font-size: 28rpx;}

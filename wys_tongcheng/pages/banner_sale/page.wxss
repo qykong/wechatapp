@@ -1,0 +1,32 @@
+form{width: 100%;}
+.heaer{margin-bottom: 10rpx;font-size:28rpx;border-left:5px solid #1AAD16;padding:18rpx 0;background: #ffffff;color:gray;padding-left: 10rpx;}
+.banner_info{background: #ffffff;font-size: 28rpx;padding-left: 10rpx;}
+.section{margin:0 1%;margin-bottom: 10rpx;}
+.container{padding:10rpx 0rpx;}
+textarea{background:#ffffff;width:720rpx;font-size:28rpx;padding:0rpx 10rpx;height:200rpx;}
+.jubao_btn{width:100%;margin-top:10rpx;}
+
+.locandphone{margin-top: 10rpx;width:100%;}
+.item{width:98%;background: #ffffff;padding:0 10rpx;display:flex;}
+.item .itemimg{display: flex;align-items: center;padding: 0 10rpx;}
+.item .itemimg image{height:40rpx;width:40rpx;}
+.item .itemtext{font-size: 26rpx;height:80rpx;padding:0 10rpx;display:flex;
+align-items: center;
+ }
+ .item .itemtextwidth{padding-right: 20rpx;}
+
+.item .rightinput{
+  flex:1;display:flex;align-items: center;justify-content: flex-end;padding-right:10rpx;height:60rpx;line-height:60rpx;padding-top:10rpx;
+}
+.picker{color:gray;}
+.view_hide{display: none!important;}
+.view_show{display:flex;border:1px solid #e6e1e1;}
+
+.upimages{margin:10rpx 0rpx;background: #ffffff;display: flex; flex-wrap:wrap;}
+.upimages_hidden{display:none;}
+.upimage{height:300rpx;width:100%;border:1px solid #e6e1e1;margin:10rpx;display: flex;justify-content: center;align-items: center;padding: 6rpx;}
+.upimage image{height:300rpx;width:100%;}
+.noborder{border:none;}
+
+
+

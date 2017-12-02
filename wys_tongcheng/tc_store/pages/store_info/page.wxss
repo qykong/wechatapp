@@ -1,0 +1,168 @@
+@import '../../resource/css/base_main.wxss';
+.flex_view{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.g_type{
+  background:red;
+  color:#fff;
+  border-radius:10rpx;
+  padding:4rpx 14rpx;
+  margin-right:10rpx;
+}
+
+.time_yingye{
+  font-size:24rpx;
+border:1px solid #ff5a00;
+color:#ff5a00;
+border-radius:6rpx;
+padding:4rpx 6rpx;
+
+}
+
+.dsf_dsd_Sdggx {
+  width: 180rpx;
+  height: 130rpx;
+}
+
+.dsf_sd_sf {
+  width: 15px;
+  height: 15px;
+  background-position: -166px -477px;
+  margin-right: 10rpx;
+}
+
+.dsf_sd_sf.act {
+  background-position: -142px -477px;
+}
+
+.dsf_sd_sd {
+  color: #666;
+  position: absolute;
+  right: 0px;
+  top: 40rpx;
+}
+.dsf_df_sdf_d{
+  height: 80rpx;
+  background: #fff;
+  line-height: 100rpx;
+}
+.map_sd_sdf{
+  width: 12px;
+  height: 17px;
+  background-position: -194px -475px;
+}
+.ring_icon_s{
+  width: 10px;
+  height: 17px;
+  background-position: -256px -473px;
+  position: absolute;
+  right: 20rpx;
+  top: 35rpx;
+}
+.map_sd_sdf.ab{
+  width: 14px;
+  height: 14px;
+  background-position: -226px -476px;
+}
+.sdf_sf_sdf{
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.sdf_sf_sdf text{
+  border-bottom: 1px solid #FF5D05;
+  padding-bottom: 20rpx;
+}
+.del_df{
+  text-decoration: line-through;
+}
+.liji_sdgfx{
+  background: #FF7B33;
+  color: #fff;
+  font-size: 28rpx;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  padding: 4rpx 10rpx; 
+}
+.dsf_s_Sdf_df{
+  width: 35px;
+  height: 14px;
+  background-position: -284px -477px;
+  position: absolute;
+  right: 0rpx;
+  top: 30rpx;
+}
+.dsf_xiuasffx{
+  color: #696969;
+  line-height: 1.8;
+  text-indent: 40rpx;
+}
+.dsf_sd_sdfgx{
+  width: 100%;
+  height: 390rpx;
+}
+.dsf_sdssf{
+  color: #696969;
+  font-size: 26rpx;
+  line-height: 1.8;
+}
+
+
+.xqbottom_s{
+  height: 100rpx;
+  background: #FF712C;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 9999
+}
+.xqbottom_s .box_a.bghk{
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+  background: #38424D
+}
+.dsf_sd_sdf{
+  height: 45rpx;
+  line-height: 45rpx;
+  padding-top: 10rpx;
+}
+.diyt_sd{
+  width: 16px;
+  height: 16px;
+  background-position: -330px -475px;
+}
+.diyt_sd.ab{
+  width: 20px;
+  height: 19px;
+  background-position: -333px -445px;
+}
+
+
+
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+  background: #fff;
+  padding-top: 20rpx;
+}

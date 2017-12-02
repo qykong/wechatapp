@@ -1,0 +1,6 @@
+@import '../../tc_store/resource/css/base_main.wxss';
+
+.main_view{
+  border-radius: 10rpx;
+ 
+}

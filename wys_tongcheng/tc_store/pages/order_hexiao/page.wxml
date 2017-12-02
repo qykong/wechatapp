@@ -1,0 +1,19 @@
+<view class="cen mt30">扫描订单二维码,核销订单</view>
+
+<view class="cen flex_btn mt30" bindtap='tap_scanCode'>
+<view class=" qr_btn flex_btn">二维码核销</view>
+</view>
+
+<view class="cen mt30 fz26" wx:if="{{result}}">订单号:{{result}} </view>
+
+<view class="cen mt30 fz26" >订单信息: <text>{{order.s_name}}</text> 总金额￥:<text class='red'>{{order.total_money}}</text> 元</view>
+
+ <view class="cen fz24" wx:for="{{order.infos}}" wx:for-item="inf" wx:key="unique">
+ <text wx:if="{{inf.g_type!='商品'}}">{{inf.g_name}} {{inf.money_pay}}元  * {{inf.cnt_buy}}</text>
+<text wx:else>{{inf.g_name}} {{inf.g_type}} {{inf.money_pay}}元 * {{inf.cnt_buy}}</text>
+
+ </view>
+
+
+ <import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />

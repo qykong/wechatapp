@@ -1,0 +1,53 @@
+.view_pay_main{
+  width: 96%;
+  margin:10rpx 2%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background:#ffffff;
+  min-height:120rpx;
+  border-radius:10rpx;
+}
+
+.view_pay{
+flex:1;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #666666;
+font-size: 30rpx;
+}
+
+.view_pay_money{
+flex:1;
+text-align: center;
+justify-content: center;
+
+align-items: center;
+color: #666666;
+font-size: 30rpx;
+}
+.font12{
+  font-size: 24rpx;
+}
+
+.order_title{
+  color: #000000;
+}
+
+.t_red{
+  color: red;
+  font-size:30rpx;
+  font-weight:bold;
+}
+
+.t_green{
+  color: #FF9900;
+  font-size:30rpx;
+  font-weight:bold;
+}
+
+.t_gray{
+  color: gray;
+   font-size:24rpx;
+}

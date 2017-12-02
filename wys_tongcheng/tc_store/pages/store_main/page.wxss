@@ -1,0 +1,10 @@
+@import '../store_list/page.wxss';
+
+.right_icon {
+  width: 10px;
+  height: 17px;
+  background-position: -256px -473px;
+  position: absolute;
+  top: 20rpx;
+  right: 10rpx; 
+}

@@ -1,0 +1,42 @@
+
+<!-- <image src="../../resource/images/test/menu_2.png"/></view>-->
+<template name="msg_czh">
+
+<view class="yj4 bgff mt20 " bindtap='msg_list' data-id='{{item.id}}'>
+    <view class="pl30 pr30 pt20 pm20">
+      <image src="{{item.u_avatarurl}}" class="user_icon_sdf fl"></image>
+      <view class="ov pl20 pr">
+        <view class="fz26 z0 mt5 dian">起点：{{item.address_start}}</view>
+        <view class="fz26 z0 mt5 dian">终点：{{item.address_end}}</view>
+        <view class="fz28 z6 mt10 dian">{{item.name}}</view>
+       
+      </view>
+      <view class="qc"></view>
+    </view>
+
+      <view class="btm pl30 pr30 pt20 pm20">
+      <view class="dsfs_df_dfrow">
+        <icon class="dsf_dd_sf_df f_i" />
+        <text class="z3 fz28 ml10">{{item.time}}</text>
+         <text class='fz28 fr'>车:{{item.num}}辆</text>
+        <view class=" pl20 pr ">
+        <icon class="f_i dfdf_dfs ab" />
+        </view>
+      </view>
+      <view class="dsfs_df_dfrow mt10 dian">
+        <icon class="dsf_dd_sf_df ab yj" />
+        <text class="z3 fz28 ml10">{{item.rmk_yaoqiu}}</text>
+      </view>
+    </view>
+
+    <view class="btm pl30 pr30 pt20 pm20 pr">
+      <icon class="f_i dsf_s_sdf" />
+      <text class="fz26 ls">{{item.msg_address}}</text>
+      <view class="fz26 z6 mt10">{{item.time_now}}</view>
+
+      <icon class="f_i touiy_sdc" bindtap="df_d_sdgx" data-tel="{{item.tel}}"/>
+    </view>
+
+
+  </view>
+</template>

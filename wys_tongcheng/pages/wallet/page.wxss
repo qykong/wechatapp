@@ -1,0 +1,85 @@
+@import '../myuser/myuser.wxss';
+
+.view_pay_main{
+  width: 96%;
+  margin:20rpx 2%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background:#99CC99;
+  min-height:120rpx;
+  border-radius:10rpx;
+}
+
+.view_pay{
+flex:1;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #ffffff;
+font-size: 30rpx;
+}
+
+.view_pay_money{
+flex:1;
+text-align: center;
+justify-content: center;
+align-items: center;
+color: #ffffff;
+font-size: 30rpx;
+}
+
+
+
+/*首页列表*/
+.menu_list{
+  background: #ffffff; 
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  justify-content:flex-start;
+  /* margin:10rpx; */
+ 
+}
+
+.menu_list .menu_icon{
+  width:25%;
+  text-align: center;
+  height: 100rpx;
+  padding:20rpx 0;
+  border-bottom:1px solid #EBEBEB;
+  float:left;
+  position:relative;
+
+}
+
+.menu_icon::after{
+content:' ';
+position:absolute;
+border-right:1px solid #EBEBEB;
+height:100%;
+right:0px;
+top:0px;
+}
+
+/* .menu_list .menu_icon::after{
+ //content:'';
+ border: 1px solid red;
+
+ //border-right:1px solid red;
+
+
+} */
+
+
+.menu_list .menu_icon image{
+  width:60rpx;
+  height:60rpx;
+}
+
+.menu_list .menu_text{
+   font-size: 26rpx;
+   height: 30rpx;
+   line-height: 30rpx;
+}

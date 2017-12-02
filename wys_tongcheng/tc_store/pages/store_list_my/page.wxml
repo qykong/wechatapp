@@ -1,0 +1,56 @@
+<!-- <view class="pd pt20 pm20 bgff" bindtap='tap_store'>
+  <icon class="f_i dsf_ddinadf fl mt15" />
+  <view class="ov pl20 pr">
+    <view class="dian fz32 z6">
+      我是商家，点击新境增店铺
+    </view>
+    <view class="fz24 z9 mt10">
+      1个帐户可添加多个店铺,进行添加
+    </view>
+    <icon class="f_i dsf_rightsd" />
+  </view>
+
+  <view class="qc"></view>
+</view> -->
+
+
+
+<!-- 列表 -->
+<view class="pd pt20 pm20 btm bgbs" wx:for="{{list}}" wx:key="unique" bindtap='tap_store_info' data-sid='{{item.id}}' data-oncode='{{item.oncode}}'>
+  <image wx:if="{{item.img_store_mentou}}" src="{{item.img_store_mentou}}" class="dsdf_sdsfsg fl" mode="scaleToFill"></image>
+  <view class="ov pl20">
+    <view class="dian fz32">{{item.s_name}}</view>
+    <view class="dian fz26">{{item.store_m_type}} {{item.store_p_type}}</view>
+    <view class="fz24 z6 dian mt10">
+     {{item.loc_address}}
+    </view>
+    <view class="dsf_sd_sdfx">
+      <text>{{item.time_start}}</text>
+      <text wx:if="{{item.s_junjia>0}}"> ￥{{item.s_junjia}}元/人</text>
+    </view>
+    <view class="dsf_df_dffx fz24 z6 mt10 pr">
+      <icon class="df_sd_sdgx f_i cz" wx:if="{{item.isopen_biaoyu=='1'}}" />
+      <text wx:if="{{item.isopen_biaoyu=='1'}}">{{item.biaoyu}}</text>
+
+     <text class="fz22 cf dsf_s_sfgx bgblue" wx:if="{{item.enable=='0'}}">审核中</text>
+     <text class="fz22 cf dsf_s_sfgx bggreen" wx:elif="{{item.enable=='1'}}">审核通过</text>
+     <text class="fz22 cf dsf_s_sfgx bgred" wx:elif="{{item.enable=='2'}}">审核驳回</text>
+    
+
+    </view>
+
+  </view>
+  <view class="qc"></view>
+</view>
+
+
+
+
+
+
+<!-- <import src="../../resource/templates/tmpl_foot.wxml"/>
+<template is="plug_foot"/> -->
+
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />

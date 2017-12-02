@@ -1,0 +1,25 @@
+<import src="../../resource/templates/comm_temp.wxml"/>
+
+<view class="container">
+
+<view class="bpic_list">
+<view wx:for="{{list}}" wx:key="unique" class="menu_icon" data-pxh="{{item.pxh}}" data-btypename="{{item.btypename}}" data-bnid="{{item.id}}" data-money="{{item.money}}" bindtap="tap_det">
+<image src="{{item.img}}"></image>
+<view class="menu_text">
+{{item.btypename}} 排序:{{item.pxh}}
+
+￥:<text style="color:red;">{{item.money}}</text>元/天
+</view>
+</view>
+</view>
+<block wx:if="{{list_last}}">
+<template is="lastdata"/>
+</block>
+
+
+</view>
+
+
+
+<import src="../../resource/templates/goHome.wxml"/>
+<template is="goHomeSelf"/>

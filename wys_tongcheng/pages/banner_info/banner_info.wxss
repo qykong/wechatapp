@@ -1,0 +1,7 @@
+@import "../../../we7/resource/plugin/wxParse/wxParse.wxss";
+
+.logo{width: 100%;}
+.logo image{width: 100%;}
+.title{margin-bottom: 30rpx;font-size: 30rpx;font-weight: bold;}
+.content{margin-bottom:20rpx;font-size: 28rpx;width:98%;margin:auto 1%;}
+.time{width:98%;font-size: 24rpx;text-align: right;color: gray;padding-right: 10rpx;padding-top: 10rpx;}

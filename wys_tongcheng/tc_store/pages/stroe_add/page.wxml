@@ -1,0 +1,315 @@
+<!-- 头部 -->
+<!-- <view class="xiang_banner">
+  <view class="banner_sfxc">
+    <view class="swiper_xdfg ">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="{{active_color}}" indicator-color="{{indicator}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view> -->
+<form bindsubmit="formSubmit" report-submit="true">
+<input type="text" value="{{it.id}}" name="id" style="display:none;" />
+<input type="text" value="{{it.oncode}}" name="oncode" style="display:none;" />
+
+<input type="text" value="{{loc_lon}}" name="loc_lon" style="display:none;" />
+<input type="text" value="{{loc_lat}}" name="loc_lat" style="display:none;" />
+<input type="text" value="{{loc_address}}" name="loc_address" style="display:none;" />
+<input type="text" value="{{loc_nation_code}}" name="loc_nation_code" style="display:none;" />
+<input type="text" value="{{loc_nation}}" name="loc_nation" style="display:none;" />
+<input type="text" value="{{loc_province}}" name="loc_province" style="display:none;" />
+<input type="text" value="{{loc_city_code}}" name="loc_city_code" style="display:none;" />
+<input type="text" value="{{loc_city}}" name="loc_city" style="display:none;" />
+<input type="text" value="{{loc_district}}" name="loc_district" style="display:none;" />
+
+<view class="pl20 mt20 bgff bbm">
+
+  <view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">店铺名称</text>
+    <input type="text" placeholder="必填，输入门店的门店名" name="s_name" value="{{it.s_name}}" class="fz32 fr f_diuyh_sdc" />
+    <icon class="f_i " />
+    <view class="qc"></view>
+  </view>
+
+
+
+  <view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">店铺分类</text>
+    <view class="fr">
+      <view class="pr f_b dsf_d_sd_sdgx">
+        <picker bindchange="bindPickerChange_store_m_type" value="{{store_m_type_idx}}" range="{{store_m_type_arr}}" class="sdf_s_Sdgf">
+          <view class="picker">
+            {{store_m_type_arr[store_m_type_idx]}}
+          </view>
+        </picker>
+        <icon class="f_i right_icon" />
+      </view>
+
+
+      <view class="pr f_b dsf_d_sd_sdgx">
+        <picker bindchange="bindPickerChange_store_p_type" value="{{store_p_type_idx}}" range="{{store_p_type_arr}}" class="sdf_s_Sdgf">
+          <view class="picker">
+            {{store_p_type_arr[store_p_type_idx]}}
+          </view>
+        </picker>
+        <icon class="f_i right_icon" />
+      </view>
+    </view>
+    <view class="qc"></view>
+  </view>
+
+
+  <!-- <view class="pt20 pm20 pr bbm" style="display:flex;">
+    <text class="fz32 dfs_ds_sdgfx">店铺分类</text>
+    <view style='flex:1;justify-content: flex-end'>
+      <view class="pr  dsf_d_sd_sdgx" style='text-align:right;padding-right:60rpx;' >
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}"  class="sdf_s_Sdgf">
+    <view class="picker" style='text-align:right;' wx:if="{{multiSelet==false}}">
+     请选择店铺分类
+    </view>
+     <view class="picker" style='text-align:right;' wx:if="{{multiSelet}}">
+     {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker> 
+        <icon class="f_i right_icon" />
+      </view>   
+
+    </view>
+    <view class="qc"></view>
+  </view> -->
+
+
+  <view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">联系人</text>
+    <input type="text" placeholder="必填，输入门店联系人" name="s_phoneperson" value="{{it.s_phoneperson}}" class="fz32 fr f_diuyh_sdc" />
+    <icon class="f_i " />
+    <view class="qc"></view>
+  </view>
+
+  <view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">联系电话</text>
+    <input type="number" placeholder="必填，输入您的联系电话" name="s_phone" value="{{it.s_phone}}" class="fz32 fr f_diuyh_sdc" />
+    <icon class="f_i " />
+    <view class="qc"></view>
+  </view>
+
+
+
+<!-- 
+  <view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">店铺分类OLD</text>
+    <view class="fr">
+      <view class="pr f_b dsf_d_sd_sdgx">
+        <picker bindchange="bindPickerChange" value="{{cy}}" range="{{cy_arr}}" class="sdf_s_Sdgf">
+          <view class="picker">
+            {{cy_arr[cy]}}
+          </view>
+        </picker>
+        <icon class="f_i right_icon" />
+      </view>
+
+
+      <view class="pr f_b dsf_d_sd_sdgx">
+        <picker bindchange="bindmala" value="{{ma}}" range="{{mala}}" class="sdf_s_Sdgf">
+          <view class="picker">
+            {{mala[ma]}}
+          </view>
+        </picker>
+        <icon class="f_i right_icon" />
+      </view>
+    </view>
+    <view class="qc"></view>
+  </view> -->
+
+
+
+
+    <view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">详细地址</text>
+    <view class='fz32 fr f_diuyh_sdc' style='font-size:28rpx;' bindtap="open_map_chonse">{{loc_address}}</view>
+     <icon class="f_i right_icon" />
+  
+    <view class="qc"></view>
+    <view style='text-align:right;padding-right:10rpx;'>
+    <!-- <text style='font-size:28rpx;background:#ff5a00;color:#ffffff;padding:10rpx 16rpx;border-radius:10rpx;'>位置选择</text> -->
+    </view>
+  </view>
+
+ <!-- start="09:01" end="21:01"  -->
+
+<view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">营业时间</text>
+    <view class="fr">
+      <view class="pr f_b dsf_d_sd_sdgx">
+   <picker mode="time" value="{{time_start}}" bindchange="bindTimeChange_start" class="sdf_s_Sdgf">
+    <view class="picker" wx:if="{{!time_start}}">
+      开始时间
+    </view>
+     <view class="picker" wx:if="{{time_start}}">
+     {{time_start}}
+    </view>
+  </picker>
+        <icon class="f_i right_icon" />
+      </view>
+
+      <view class="pr f_b dsf_d_sd_sdgx">
+ <picker mode="time" value="{{time_end}}" bindchange="bindTimeChange_end" class="sdf_s_Sdgf">
+    <view class="picker" wx:if="{{!time_end}}">
+      结束日期
+    </view>
+     <view class="picker" wx:if="{{time_end}}">
+     {{time_end}}
+    </view>
+  </picker>     
+        <icon class="f_i right_icon" />
+      </view>
+    </view>
+    <view class="qc"></view>
+  </view> 
+  
+  
+  <!-- -->
+
+
+<view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">店铺介绍 <text class='c57'>(选填)</text> </text>
+ <textarea maxlength="-1" placeholder="请输入店铺介绍" name="rmk_store" placeholder-class='text_js' style='background:#f1f1f1;width:98%' value='{{it.rmk_store}}'></textarea>
+    <icon class="f_i " />
+    <view class="qc"></view>
+  </view>
+
+
+<view class="pt20 pm20 pr bbm">
+    <text class="fz32 dfs_ds_sdgfx">购买需知 <text class='c57'>(选填)</text> </text>
+ <textarea maxlength="-1" placeholder="请输入购买需知" name="rmk_goumai" placeholder-class='text_js' style='background:#f1f1f1;width:98%' value='{{it.rmk_goumai}}'></textarea>
+    <icon class="f_i " />
+    <view class="qc"></view>
+  </view>
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+<view class="mt20 bgff pd pt20 pm20">
+ 
+   <view class="sd_fouy_sd cen fl">
+    <view class="fz30 mt20">门店/门头照片<text class='red'>(必须)</text> </view>
+    <view class="df_sd_sdfxc mt20 pr" bindtap="sdf_dfs" data-idx="1">
+      <image wx:if="{{ssd_Sd_a}}" src="{{ssd_Sd_a}}" class="dsf_s_sd_sdgx" mode="aspectFit"></image>
+      <view class="df_dsd_sd_S fz30 cf">
+        <icon class="f_i d_phoned cz" /> {{ssd_Sd_a?'重新上传':'请上传'}}门店照片
+      </view>
+    </view>
+  </view>
+  
+  <view class="sd_fouy_sd cen fr">
+    <view class="fz30 mt20">工商营业执照 <text class='red' wx:if="{{isopen_yyzz}}">(必须)</text></view>
+    <view class="df_sd_sdfxc mt20 pr" bindtap="sdf_dfs" data-idx="2">
+      <image wx:if="{{ssd_Sd_b}}" src="{{ssd_Sd_b}}" class="dsf_s_sd_sdgx" mode="aspectFit"></image>
+      <view class="df_dsd_sd_S fz30 cf">
+        <icon class="f_i d_phoned cz" /> {{ssd_Sd_b?'重新上传':'请上传'}}营业执照
+      </view>
+    </view>
+  </view>
+
+  <view class="qc"></view>
+
+   <view class="pt20 pm20 pr bbm">
+   <text class="fz32 dfs_ds_sdgfx">入驻费用/年:</text>   
+   <text class="fz32 red" wx:if="{{pay_money_ruzhu}}">  {{pay_money_ruzhu}}元</text>
+   <text class="fz32"> {{last_time_str}} 到期</text>  
+    <view class="qc"></view>
+  </view>
+
+  <view class="pt20 pm20 pr bbm" wx:if="{{enable=='2'}}">
+   <text class="fz32 dfs_ds_sdgfx">审核回馈:</text>   
+   <text class="fz32 red textbreak" > {{sh_str}}</text>  
+  <view class="qc"></view>
+  </view>
+
+
+ <!-- wx:if="{{form_action=='edit'}}"  -->
+<view class="cen" >
+<view class="fz30 mt20" >店铺照片</view>
+<view class="upimages df_sd_sdfxc mt20" style='border:none;border-top:1px solid #e5e5e5;'>
+<block wx:for="{{imglist}}" wx:key="unique">
+<view class="upimage noborder" data-img="{{item.img}}" bindlongtap="pic_remove" data-imgtype="{{item.imgtype}}" data-status="{{item.status}}" ><image src="{{item.img}}"/></view>  
+</block>
+
+<view class="{{upimgbtt?'upimages_hidden':'upimage'}}" bindtap="choosePic">+</view>
+
+</view>
+
+</view>
+
+
+  <!-- <view class="sd_fouy_sd cen fr">
+    <view class="fz30 mt20">工商营业执照</view>
+    <view class="df_sd_sdfxc mt20 pr" bindtap="sdf_dfs" data-idx="2">
+      <image  wx:if="{{ssd_Sd_b}}" src="{{ssd_Sd_b}}" class="dsf_s_sd_sdgx" mode="aspectFit"></image>
+      <view class="df_dsd_sd_S fz30 cf">
+        <icon class="f_i d_phoned cz" /> {{ssd_Sd_b?'重新上传':'请上传'}}营业执照
+      </view>
+    </view>
+  </view>
+   -->
+  <view class="qc"></view>
+  <view class="mt60   ">
+    <button class="que_fau fz32 cf" formType="submit">{{pay_btn_title}}</button>
+  </view>
+
+
+</view>
+</form>
+
+
+
+
+<!-- 
+<view class="hggfsdf_sd box cen">
+  <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf cz" />
+    </view>
+    同城
+  </navigator>
+  <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ab cz" />
+    </view>
+    商家
+  </navigator>
+  <navigator class="box_a ">
+    <i class="f_i adsfsf_sd"></i>
+  </navigator>
+  <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ac cz" />
+    </view>
+    拼车
+  </navigator>
+  <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ad cz" />
+    </view>
+    我的
+  </navigator>
+
+</view> -->
+
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />
+

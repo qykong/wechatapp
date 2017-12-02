@@ -1,0 +1,49 @@
+<!-- <scroll-view scroll-x="true" class="xscroll_bar">
+  <view class="menu_item {{index==activeIndex?'active':''}}" style="width:{{itemWidth}};" wx:for="{{menus}}" wx:key="unique" bindtap="tabChange" data-index="{{index}}" data-menuId='{{item.menuId}}'>
+    <view class="{{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">
+      {{item.menu}} {{menuId}}
+    </view>
+  </view>
+</scroll-view> -->
+
+<!-- <view class="menu_content">选中菜单{{activeIndex+1}}</view> -->
+
+<!-- <view class="menu_panel">
+ <view>
+  <view>当菜单个数小于等于 5 时，tab宽度按照屏幕尺寸均分；</view>
+  <view>当菜单个数大于 5 时，tab宽度为160rpx；超出部分可左滑滚动</view>
+ </view>
+</view> -->
+
+
+<view class="pd pt20 pm20 btm bgbs" wx:for="{{list}}" wx:key="unique" bindtap='tap_store_goods_info' data-gid='{{item.id}}' data-sid='{{item.s_id}}' data-oncode='{{item.oncode}}'>
+  <image src="{{item.img_store_mentou}}" class="dsdf_sdsfsg fl" mode="widthFix" wx:if="{{item.img_store_mentou}}"></image>
+  <view class="ov pl20">
+    <view class="dian fz32">{{item.g_name}}</view>
+    <view class="dian fz26">{{item.g_type}} - {{item.s_name}}</view>
+    <view class="fz24 z6 dian mt10">
+     <text wx:if="{{item.money_mengshi!='0'}}" class="gray line-through">门市价 ￥:{{item.money_mengshi}}</text> 
+     <text class='red'> 实售￥:{{item.money_sale}}</text>
+    </view>
+    <view class="fz26">
+      <text wx:if="{{item.g_cnt_all!='0'}}">库存:{{item.g_cnt_all}}</text>
+      <text wx:else>库存:无限制</text>
+      <text wx:if="{{item.g_cnt_all!='0'}}"> 剩余:{{item.g_cnt_all-item.g_cnt_sale}}</text>
+    </view>
+    <view class="dsf_df_dffx fz24 z6 mt10 pr">
+     
+
+     <text class="fz22 cf dsf_s_sfgx bgblue" wx:if="{{item.enable=='0'}}">审核中</text>
+     <text class="fz22 cf dsf_s_sfgx bggreen" wx:elif="{{item.enable=='1'}}">审核通过</text>
+     <text class="fz22 cf dsf_s_sfgx bgred" wx:elif="{{item.enable=='2'}}">审核驳回</text>
+    
+
+    </view>
+
+  </view>
+  <view class="qc"></view>
+</view>
+
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />

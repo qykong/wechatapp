@@ -1,0 +1,72 @@
+<view class="container">
+<form bindsubmit="formSubmit" report-submit="true">
+<!-- style="display:none;"  -->
+<input type="text" value="{{bn_info.bnid}}" name="bn_id" style="display:none;"/>
+<input type="text" value="{{bn_info.btypename}}" name="bn_btypename" style="display:none;"/>
+<input type="text" value="{{bn_info.money}}" name="bn_daymoney" style="display:none;"/>
+<input type="text" value="{{bn_days}}" name="bn_days" style="display:none;"/>
+<input type="text" value="{{bn_total_money}}" name="bn_total_money" style="display:none;"/>
+<input type="text" value="{{bn_info.pxh}}" name="bn_pxh" style="display:none;"/>
+<input type="text" value="{{msg_det.mid}}" name="m_id" style="display:none;"/>
+
+
+<view class="heaer">广告位信息</view>
+<view class="banner_info">
+位置:{{bn_info.btypename}} 排序:{{bn_info.pxh}}
+</view>
+<view class="heaer">展示消息的内容</view>
+<view class="section">
+  <textarea  placeholder="请输入你要发布的内容" maxlength="-1" name="content" value="{{msg_det.content}}" />
+</view>
+
+
+<view class="heaer">请选择上传幻灯片图片(16:9比例 宽*高)</view>
+
+
+<view class="upimages">
+<block wx:for="{{imglist}}">
+<view class="upimage noborder" data-img="{{item}}" bindlongtap="pic_remove"><image src="{{item}}"/></view>   
+</block>
+
+<view class="{{upimgbtt?'upimages_hidden':'upimage'}}" bindtap="choosePic">+</view>
+
+</view>
+
+
+<view class="heaer">展示天数及费用</view>
+<view wx:if="{{is_top}}" class="item" style="margin-top:10rpx;">
+<view class="itemtext" style="flex:1;">我要置顶</view>
+<view class="itemtext rightinput">
+<switch bindchange="switch1Change" name="istopstatus" checked="{{showView}}"/>
+</view></view>
+
+
+<view class="item">
+<view class="itemtext" style="flex:1;">选择租借天数</view>
+<view class="itemtext rightinput">
+
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="days" name="dayindex">
+<view class="picker">租借天数:{{objectArray[index].days}}天▼</view>
+</picker>
+
+</view></view>
+
+<view class="item">
+<view class="itemtext" style="flex:1;">费用</view>
+<view class="itemtext rightinput txtred" >
+￥{{bn_total_money}}元
+</view></view>
+
+
+<view class="jubao_btn">
+<button formType="submit" type="primary" size="default" bindtap="primary">付费</button>
+</view>
+
+
+</form>
+</view>
+
+
+
+<import src="../../resource/templates/goHome.wxml"/>
+<template is="goHomeSelf"/>

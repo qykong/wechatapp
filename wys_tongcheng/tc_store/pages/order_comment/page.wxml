@@ -1,0 +1,66 @@
+
+<view class="container" >
+
+<view class="comment1-description flex_box" style="width:100%;">
+   <view style='margin:10rpx 20rpx;' class='flex_box'>
+   <view class="comment1-description1" style="font-size:28rpx;">我的评分</view>
+   <view  class="star-pos flex_box" >
+        <view class="stars  {{flag>=1? 'on': ''}}"  bindtap="changeColor" data-flag="1"></view>
+        <view class="stars  {{flag>=2? 'on': ''}}"  bindtap="changeColor" data-flag="2"></view>
+        <view class="stars  {{flag>=3? 'on': ''}}"  bindtap="changeColor" data-flag="3"></view>
+        <view class="stars  {{flag>=4? 'on': ''}}"  bindtap="changeColor" data-flag="4"></view>
+        <view class="stars  {{flag>=5? 'on': ''}}"  bindtap="changeColor" data-flag="5"></view>
+    </view>
+    <view style='margin-left:18rpx;font-size:28rpx;'>{{flag_str}}</view>
+    </view>
+ </view>
+
+
+<form bindsubmit="formSubmit" report-submit="true">
+
+
+
+<view class="section">
+  <textarea maxlength="-1" placeholder="请输入你要评价的内容" name="mcontent" />
+</view>
+
+<view class="upimages">
+<block wx:for="{{imglist}}" wx:key="unique">
+<view class="upimage noborder" data-img="{{item}}" bindlongtap="pic_remove"><image src="{{item}}"/></view>   
+</block>
+
+<view class="{{upimgbtt?'upimages_hidden':'upimage'}}" bindtap="choosePic">+</view>
+
+</view>
+
+<view class="classname" style="font-size:24rpx;color:gray;padding-left:10rpx;">长按可删除图片,最多{{imgcnt}}张图片</view>
+
+<view class="locandphone">
+<input type="text" value="{{pl_ctype}}" name="pl_ctype" style="display:none;" />
+<input type="text" value="{{oncode}}" name="oncode" style="display:none;" />
+<input type="text" value="{{s_id}}" name="s_id" style="display:none;" />
+<input type="text" value="{{goods_id}}" name="goods_id" style="display:none;" />
+<input type="text" value="0" name="attr" style="display:none;" />
+
+
+
+
+</view>
+
+
+
+<view class="jubao_btn">
+<button formType="submit" type="primary" size="default" bindtap="primary">立即发布</button>
+</view>
+
+
+
+
+
+</form>
+
+
+</view>
+
+
+

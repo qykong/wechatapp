@@ -1,0 +1,294 @@
+<!-- 商家详情页 -->
+<view class="xiang_banner">
+  <!-- banner -->
+  <view class="banner_sfxc">
+    <view class="swiper_xdfg ">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="{{active_color}}" indicator-color="{{indicator}}">
+        <block wx:for="{{it.imgs_list_arr}}" wx:key="unique">
+          <swiper-item>
+<image src="{{item}}" class="slide-image" width="355" height="150" bindtap='previewImage' data-img='{{item}}' data-imgs='{{it.imgs_list_arr}}' mode="aspectFit" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+ 
+<view class='store_main'>
+<view class='t1 fz36'>{{it.g_name}}</view>
+<!-- <view class='t2 fz24'>老李家黄焖饭</view> -->
+</view>
+
+</view>
+
+<!-- line-through -->
+
+<view class="mt20 bgff">
+
+  <view class=" fz30 fl pd" style='height:90rpx;line-height:90rpx;'>    
+  <text class='fz30' style='color:#20B2AA;'>￥</text> <text class="fz48" style='color:#20B2AA;'>{{it.money_sale}}元</text>  
+  </view>
+
+  <!-- <view class=" fz30 fl pd line-through" style='height:90rpx;line-height:90rpx;' wx:if="{{it.store.isopen_newkefu=='true'}}">    
+  <text class='fz30' style='color:#20B2AA;'>￥</text> <text class="fz48" style='color:#20B2AA;'>{{it.money_sale}}元</text>  
+  </view> -->
+
+  <view class="fz28 fl" style='height:90rpx;display:flex;align-items: center;color:#CCCCCC' wx:if="{{it.money_mengshi>0}}">
+  门市价:￥{{it.money_mengshi}}
+  </view>
+  <view class="fz30 fr pd" style='height:90rpx;display:flex;align-items: center;'> 
+ 
+ <button size="default" type="primary" style='background:#ff5a00;font-size:30rpx;' bindtap='tap_buy_goods' data-gid='{{it.id}}' data-sid='{{it.s_id}}' data-it='{{it}}' >立即购买</button>
+
+ <!-- <button wx:if="{{it.store.isopen_newkefu=='true'}}" size="default" type="primary" style='background:#ff5a00;font-size:30rpx;' bindtap='tap_buy_goods' data-gid='{{it.id}}' data-sid='{{it.s_id}}'>￥:{{it.money_sale-it.money_newkefu_reduction}}元,立即购买</button> -->
+
+
+  </view>
+<view class="qc bbt"></view>
+
+  <view class="pd pt20 pm20 bgff bbm" >
+    
+    <view class="ov pl20 pr">
+      <!-- <view class="fz30 z6">
+      {{it.g_name}}
+      </view> -->
+     <view class="fz30 z6">
+      <icon class="df_sd_sdgx f_i cz" wx:if="{{it.isopen_newkefu=='true'}}" />
+      <text wx:if="{{it.isopen_newkefu=='true'}}"> 新客立减￥:{{it.money_newkefu_reduction}}元</text>
+      </view>
+
+      <!-- <view  class="fz28 mt10">
+     
+      </view> -->
+
+      <!-- <view class="fz28 mt10">
+        <text class="ye">优惠价 ￥209</text>
+        <text class="z9 del_df ml20">门店价 ￥1206</text>
+      </view> -->
+
+      <view class='fl'>
+       <text class='fz26 g_type'>{{it.g_type}}</text>
+      
+      </view>
+
+      <view class="fz28 mt10 pr fr">
+        
+      <text class="z9" wx:if="{{it.cnt_comments>0}}">{{it.cnt_comment_all.length}}人点评</text>
+        <text class="z9  ml20">已售：{{it.g_cnt_sale}}</text>
+     
+      </view>
+    </view>
+    <view class="qc"></view>
+  </view>
+
+
+</view>
+
+
+<view class="pd bgff bbm mt10 tc_list">
+
+<text wx:for="{{it.goods_list}}" wx:key="unique" wx:for-item="git" class="tc_name fz30 {{active_tcid==git.id?'active':''}}" bindtap='tap_choose_tc' data-tcid='{{git.id}}' data-oncode='{{git.oncode}}'>
+<text wx:if="{{git.g_type!='商品'}}">{{git.money_sale}}元 {{git.g_type}}</text>
+<text wx:else>{{git.g_name}}</text>
+</text>
+<!-- <text class="tc_name fz30 {{active_tcid=='1'?'active':''}}" bindtap='tap_choose_tc' data-tcid='1'>13.8元单人餐</text>
+<text class="tc_name fz30 {{active_tcid=='2'?'active':''}}" bindtap='tap_choose_tc' data-tcid='2'>13.8元单人餐</text>
+<text class="tc_name fz30 {{active_tcid=='3'?'active':''}}" bindtap='tap_choose_tc' data-tcid='3'>13.8元单人餐</text>
+<text class="tc_name fz30 {{active_tcid=='4'?'active':''}}" bindtap='tap_choose_tc' data-tcid='4'>13.8元单人餐</text>
+<text class="tc_name fz30 {{active_tcid=='5'?'active':''}}" bindtap='tap_choose_tc' data-tcid='5'>13.8元单人餐</text> -->
+
+</view>
+<!-- 
+<view class="mt20 bgff">
+  <view class=" sdf_sf_sdf bbm fz30">
+    <text class="pd">在售产品</text>
+  </view>
+
+  <view class="pd pt20 pm20 bgff bbm" wx:for="1">
+    <image src="../../resource/images/youy.png" class="dsf_dsd_Sdggx fl"></image>
+    <view class="ov pl20 pr">
+      <view class="fz30 z6">
+        12次游泳卡(每天没卡6小时)
+      </view>
+      <view class="fz28 mt10">
+        <text class="ye">优惠价 ￥209</text>
+        <text class="z9 del_df ml20">门店价 ￥1206</text>
+      </view>
+
+      <view class="fz28 mt10 pr">
+        <text class="z9">收藏：88人</text>
+        <text class="z9  ml20">已售：99</text>
+        <navigator url="#" class="liji_sdgfx yj4">立即购买</navigator>
+      </view>
+    </view>
+    <view class="qc"></view>
+  </view>
+</view> -->
+
+
+
+
+<view class="bgff pd mt20 pm20">
+  <view class="fz32 pt20 pm20 bbm pr">
+    商品详情
+    <!-- <icon class="f_i dsf_s_Sdf_df" /> -->
+  </view>
+
+   <view class="fz26  dsf_xiuasffx pt20 pm20">
+    {{it.tc_info}}
+  </view>
+
+  <!-- <view class="fz26  dsf_xiuasffx pt20 pm20">
+    奥体中心游泳跳水馆是亚运会游泳跳水项目的主要比赛场 馆，将举行游泳、跳水和现代五项游泳比赛及亚残会游泳比赛， 赛后将作为训练基地，满足国家队冬训及亚运会之后举行重大 赛事的要求。
+  </view>
+
+  <view class="dsf_sdssf mt20"> 公交：奥林匹克体育中心北门站：506路A、506路、51路夜 车、52路夜车、548路、564路、B22路、B26路
+  </view>
+
+  <view class="dsf_sdssf mt20">环场路西站：506路A、506路、508路快线、548路、 564路A、564路、574路
+  </view>
+  <view class="dsf_sdssf mt20">
+    地铁：黄村站
+  </view> -->
+</view>
+
+
+<!-- <view class="bgff pd mt20 pm20">
+  <view class="fz32 pt20 pm20 bbm pr">
+    购买需知
+   <icon class="f_i dsf_s_Sdf_df" />
+  </view>
+  <view class="fz26  dsf_xiuasffx pt20 pm20">
+    奥体中心游泳跳水馆是亚运会游泳跳水项目的主要比赛场 馆，将举行游泳、跳水和现代五项游泳比赛及亚残会游泳比赛， 赛后将作为训练基地，满足国家队冬训及亚运会之后举行重大 赛事的要求。
+  </view>
+
+  <view class="dsf_sdssf mt20"> 公交：奥林匹克体育中心北门站：506路A、506路、51路夜 车、52路夜车、548路、564路、B22路、B26路
+  </view>
+
+  <view class="dsf_sdssf mt20">环场路西站：506路A、506路、508路快线、548路、 564路A、564路、574路
+  </view>
+  <view class="dsf_sdssf mt20">
+    地铁：黄村站
+  </view>
+</view> -->
+
+
+
+<view class="pd pt20 pm20 bgff bbm mt10">
+  <image wx:if="{{it.store.img_store_mentou}}" src="{{it.store.img_store_mentou}}" class="dsf_dsd_Sdggx fl"></image>
+  <view class="ov pl20 pr">
+    <view class="dsf_sd_sd fz28" wx:if="{{it.store.s_junjia>0}}">￥{{it.store.s_junjia}}/人</view>
+    <view class="fz36">{{it.store.s_name}}</view>
+    <view class="dsf_Dfdfs">
+
+      <icon class="f_i cz dsf_sd_sf act" wx:for="{{it.store.score_m}}" wx:key="unique"/>
+      <icon class="f_i cz dsf_sd_sf " wx:for="{{it.store.score_p}}" wx:key="unique" />
+      <text class="fz28 z6" wx:if="{{it.cnt_comment_all.length>0}}">
+      <text wx:if="{{it.store.score_all>0}}" class="fz24">{{it.store.score_all}}分</text> {{it.cnt_comments}}人点评</text>
+    </view>
+    <view class="fz26 z6">
+      营业时间: {{it.store.time_start}}
+      <text>{{it.store.cnt_look}}人浏览</text>
+    </view>
+  </view>
+  <view class="qc"></view>
+</view>
+
+<view class="dsf_df_sdf_d pd fz26 pr bbm" bindtap="open_map" data-lat="{{it.store.loc_lat}}" data-lon="{{it.store.loc_lon}}">
+  <icon class="f_i map_sd_sdf cz mr10" /> {{it.store.loc_address}}
+  <input class="f_i ring_icon_s" />
+</view>
+<view class="dsf_df_sdf_d pd fz26 pr" bindtap='tap_phone' data-s_phone='{{it.store.s_phone}}'>
+  <icon class="f_i map_sd_sdf cz mr10 ab" />{{it.store.s_phone}}
+  <input class="f_i ring_icon_s" />
+</view>
+
+
+<view class="bgff pd mt20 " wx:if="{{it.cnt_comments>0}}">
+  <view class="fz32 pt20 pm20 bbm pr">
+   客户点评({{it.cnt_comment_all.length}})
+    <icon class="f_i dsf_s_Sdf_df"  bindtap='tap_comment_list' data-type='goods' data-val='{{it.id}}' data-name='{{it.g_name}}' />
+  </view>
+  <view class=" bgff pt20 pm20 mt20 bbm" wx:for="{{it.cnt_comment_all}}" wx:key="unique" wx:for-item="ct" wx:for-index="idx">
+    <image wx:if="{{ct.u_avatarurl}}" src="{{ct.u_avatarurl}}" class="use_iconsd fl"></image>
+    <view class="ov pl20">
+      <view class="d_sdf_sfgx">
+        <text class="fz30">{{ct.u_nickname}}</text>
+        <text class="fz24 fr">{{ct.crtime}}</text>
+        <view class="dsf_Dfdfs">
+          <icon class="f_i cz dsf_sd_sf act" wx:for="{{ct.score_m}}" wx:key="unique" />
+          <icon class="f_i cz dsf_sd_sf " wx:for="{{ct.score_p}}" wx:key="unique"/>
+        </view>
+        <view class="qc pt20 fz30 ">
+         {{ct.mcontent}}
+        </view>
+        <view class="ds_sd_dff_ddf mt20">
+<image wx:for="{{ct.imgs_list}}" wx:key="unique" wx:for-item="ctimg" mode="scaleToFill" bindtap="dsddf_xf" src="{{ctimg}}" bindtap='previewImage' data-img="{{ctimg}}" data-imgs="{{ct.imgs_list}}"></image>
+        </view>
+
+
+    <view class="pd pt20 pm20 dsf_s_sdfgxc mt20" wx:if="{{ct.comments_p.length>0}}">
+          <view class="fz30" wx:for="{{ct.comments_p}}" wx:key="unique" wx:for-item="pct">
+            <text class="ls">{{pct.u_nickname}}:</text><text class='fz28 textbreak cbk'>{{pct.mcontent}}</text>
+          </view>
+        </view>
+
+ <view class='fz28 gray2' bindtap='tap_comment' data-s_id='{{ct.s_id}}' data-oncode="{{ct.oncode}}" data-goods_id='{{ct.goods_id}}' data-attr='{{ct.id}}' data-idx='{{idx}}'>回复</view>
+
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+
+
+
+
+<!-- 详情底部 -->
+<!-- <view class="xqbottom_s box cen fz30">
+  <navigator url="#" class="box_a bghk">
+  刘老师(商家)
+  </navigator>
+    <navigator url="#" class="box_a" >
+      <view class="dsf_sd_sdf">
+          <icon class="f_i diyt_sd cz" />
+      </view>
+      <text class="cf fz28">电话</text>
+  </navigator>
+     <navigator url="#" class="box_a" style='background:#38424D'>
+      <view class="dsf_sd_sdf">
+          <icon class="f_i diyt_sd cz ab" />
+      </view>
+      <text class="cf fz28">评论</text>
+  </navigator>
+</view> -->
+
+
+<!--评论-->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+<form bindsubmit="formSubmit_send_comments" report-submit="true">
+<input type="text" value="{{oncode}}" name="oncode" style="display:none;" />
+<input type="text" value="{{s_id}}" name="s_id" style="display:none;" />
+<input type="text" value="{{goods_id}}" name="goods_id" style="display:none;" />
+
+<input type="text" value="{{pl_ctype}}" name="pl_ctype" style="display:none;" />
+<input type="text" value="{{attr}}" name="attr" style="display:none;" />
+
+
+<view class="classname" style="display:flex;padding:10rpx 30rpx 30rpx 30rpx;">
+<view class="classname" style="width:85%;margin-right:20rpx;">
+<input type="text" name="mcontent" placeholder="评论{{plname}}" style="border-bottom: 3rpx solid #1AAD16;width:100%;height:70rpx;"/>
+</view>
+
+<view class="classname" style="width:15%;">
+<button formType="submit" type="primary" size="mini" bindtap="send_comments" style="padding:4rpx 20rpx;width:100%;">发送</button>
+</view>
+</view>
+</form>
+</view>
+<!--评论 结束-->
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />

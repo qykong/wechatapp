@@ -1,0 +1,145 @@
+<import src="../../resource/templates/rzc.wxml"/>
+<import src="../../resource/templates/czr.wxml"/>
+<import src="../../resource/templates/czh.wxml"/>
+<import src="../../resource/templates/hzc.wxml"/>
+
+<!-- 拼车 -->
+<!-- banner -->
+<swiper class="banner {{bannser_show?'banner_show':'banner_hide'}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{banners}}" wx:key="unique">
+   <template is="temp_banner" data="{{item}}"/>
+  </block>
+</swiper>
+
+<view class="mt20 pd bgff pr">
+  <view class="dsf_dd_df_dgg pr">
+    <icon class="yj dianer_sdf" />
+    <view class="fz26 bbm dian"  bindtap="open_map_chonse">{{address_start}}</view>
+  </view>
+  <view class="dsf_dd_df_dgg pr">
+    <icon class="yj dianer_sdf ab" />
+    <view class="fz26 bbm ye dian" bindtap="open_map_chonse2">{{address_end}}</view>
+  </view>
+  <button class="yj4 chufa_sdfx" bindtap="open_submit_carpool">去拼车</button>
+</view>
+
+
+
+<!-- 菜单 -->
+<!-- <view class=" bgff box cen mt20">
+  <navigator url="{{item.url}}" open-type="switchTab"  class="box_a  pt10 pm20" wx:for="{{df_dsf}}">
+    <view class="dsf_dd_dsfdf">
+      <icon class="f_i dsf_dsdsdf cz {{item.img}}" />
+    </view>
+    <view class="fz30" style="color:#515361">{{item.name}}</view>
+  </navigator>
+</view> -->
+
+<view wx:if="{{currentTabmenu=='1'}}" class=" bgff box cen mt20">
+  
+  <view  class="{{currentTab==0 ? 'tab_selectedtabnav' : 'tab_defaultnav'}} box_a  pt10 pm20 " data-current="0" bindtap="swichNav"> 
+    <view class="dsf_dd_dsfdf">
+        <icon class="f_i dsf_dsdsdf cz " />
+      </view>
+      <view class="fz30" style="color:#515361">人找车</view>
+</view>
+<view class="box_a  pt10 pm20 {{currentTab==1 ? 'tab_selectedtabnav' : 'tab_defaultnav'}}" data-current="1" bindtap="swichNav">
+      <view class="dsf_dd_dsfdf">
+        <icon class="f_i dsf_dsdsdf cz ab" />
+      </view>
+      <view class="fz30" style="color:#515361">车找人</view>
+</view>
+<view class="box_a  pt10 pm20 {{currentTab==2 ? 'tab_selectedtabnav' : 'tab_defaultnav'}}" data-current="2" bindtap="swichNav">
+       <view class="dsf_dd_dsfdf">
+        <icon class="f_i dsf_dsdsdf cz ac" />
+      </view>
+      <view class="fz30" style="color:#515361">车找货</view>
+</view>
+<view class="box_a  pt10 pm20 {{currentTab==3 ? 'tab_selectedtabnav' : 'tab_defaultnav'}}" data-current="3" bindtap="swichNav">
+       <view class="dsf_dd_dsfdf">
+        <icon class="f_i dsf_dsdsdf cz ad" />
+      </view>
+      <view class="fz30" style="color:#515361">货找车</view>
+  </view>
+   
+   
+</view>
+
+
+
+
+<view class="{{currentTab==0 ? 'tab_show' : 'tab_hidden'}}" id="msg_list_0">
+<block wx:for="{{m_list_0}}" wx:key="unique" wx:for-index="idx">
+<template is="msg_rzc" data="{{item,idx}}"/>
+</block>
+<block wx:if="{{m_list_0_last}}">
+<template is="lastdata"/>
+</block>
+</view>
+
+
+
+<view class="{{currentTab==1 ? 'tab_show' : 'tab_hidden'}}" id="msg_list_1">
+<block wx:for="{{m_list_1}}" wx:key="unique" wx:for-index="idx">
+<template is="msg_czr" data="{{item,idx}}"/>
+</block>
+<block wx:if="{{m_list_1_last}}">
+<template is="lastdata"/>
+</block>
+</view>
+
+<view class="{{currentTab==2 ? 'tab_show' : 'tab_hidden'}}" id="msg_list_2">
+<block wx:for="{{m_list_2}}" wx:key="unique" wx:for-index="idx">
+<template is="msg_czh" data="{{item,idx}}"/>
+</block>
+<block wx:if="{{m_list_2_last}}">
+<template is="lastdata"/>
+</block>
+</view>
+
+<view class="{{currentTab==3 ? 'tab_show' : 'tab_hidden'}}" id="msg_list_3">
+<block wx:for="{{m_list_3}}" wx:key="unique" wx:for-index="idx">
+<template is="msg_hzc" data="{{item,idx}}"/>
+</block>
+<block wx:if="{{m_list_3_last}}">
+<template is="lastdata"/>
+</block>
+</view>
+
+
+<!-- 列表 -->
+ <!-- <view class="pd ">
+  <view class="yj4 bgff mt20" wx:for="{{df_dsf}}">
+    <view class="pl30 pr30 pt20 pm20">
+      <image src="/img/user_d.png" class="user_icon_sdf fl"></image>
+      <view class="ov pl20 pr">
+        <view class="fz30 z0 mt20 dian">重庆-吴彦祖</view>
+        <view class="fz28 z6 mt10 dian">慕容云海</view>
+        <icon class="f_i dfdf_dfs {{item.img}}" />
+      </view>
+      <view class="qc"></view>
+    </view>
+
+    <view class="btm pl30 pr30 pt20 pm20">
+      <view class="dsfs_df_dfrow">
+        <icon class="dsf_dd_sf_df f_i" />
+        <text class="z3 fz28 ml10">2017-08-23 05:08</text>
+      </view>
+      <view class="dsfs_df_dfrow mt10 dian">
+        <icon class="dsf_dd_sf_df ab yj" />
+        <text class="z3 fz28 ml10">顺路回家，希望能有小伙伴同行</text>
+      </view>
+    </view>
+
+    <view class="btm pl30 pr30 pt20 pm20 pr">
+      <icon class="f_i dsf_s_sdf" />
+      <text class="fz26 ls">福建省福州市平潭县坛东大道</text>
+      <view class="fz26 z6 mt10">8月15日 12：55</view>
+
+      <icon class="f_i touiy_sdc" bindtap="df_d_sdgx" data-tel="13538190372"/>
+    </view>
+
+
+  </view>
+</view>  -->
+

@@ -1,0 +1,108 @@
+@import '../../../tc_store/resource/css/base_main.wxss';
+
+.tab_defaultnav {
+  line-height: 18rpx;
+  text-align: center;
+  flex: 1; 
+   -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);    
+    filter: grayscale(100%);	
+    filter: gray;
+}
+
+.tab_defaultnav text{
+color: #777;
+padding-bottom:20rpx;
+padding-left:20rpx;
+padding-right:20rpx;
+}
+
+.tab_selectedtabnav {
+  line-height: 18rpx;
+  text-align: center;  
+  flex: 1;
+  
+}
+.tab_selectedtabnav view{
+
+color: red!important;
+}
+.tab_show {
+  display: block;
+
+  width: 100%;
+}
+
+.tab_hidden {
+  display: none;
+
+}
+.dsf_dd_dsfdf {
+  height: 50px;
+  line-height: 50px;
+}
+
+.dsf_dsdsdf {
+  width: 35px;
+  height: 24px;
+  background-position: -14px -194px;
+}
+
+.dsf_dsdsdf.ab {
+  width: 26px;
+  height: 30px;
+  background-position: -75px -188px;
+}
+
+.dsf_dsdsdf.ac {
+  width: 26px;
+  height: 24px;
+  background-position: -125px -194px;
+}
+
+.dsf_dsdsdf.ad {
+  width: 38px;
+  height: 22px;
+  background-position: -177px -195px;
+}
+
+.user_icon_sdf{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius:10%;
+}
+.dfdf_dfs{
+  width: 85px;
+  height: 33px;
+  background-position: -260px -185px;
+  position: absolute;
+  right: 0px;
+  top: 20rpx;
+}
+.dfdf_dfs.ab{
+  background-position: -14px -242px;
+}
+.dfdf_dfs.ac{
+  background-position: -124px -241px;
+}
+.dfdf_dfs.ad{
+  background-position: -241px -242px;
+}
+.dsf_dd_sf_df{
+  width: 10px;
+  height: 10px;
+  background-position: -340px -263px;
+}
+.dsf_dd_sf_df.ab{
+  background: #1296DB
+}
+.touiy_sdc{
+  width: 29px;
+  height: 29px;
+  background-position: -302px -133px;
+  position: absolute;
+  right: 30rpx;
+  top: 40rpx;
+}

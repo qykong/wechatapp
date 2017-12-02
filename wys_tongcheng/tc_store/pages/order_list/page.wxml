@@ -1,0 +1,69 @@
+<!-- <scroll-view scroll-x="true" class="xscroll_bar">
+  <view class="menu_item {{index==activeIndex?'active':''}}" style="width:{{itemWidth}};" wx:for="{{menus}}" wx:key="unique" bindtap="tabChange" data-index="{{index}}" data-menuId='{{item.menuId}}'>
+    <view class="{{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">
+      {{item.menu}} {{menuId}}
+    </view>
+  </view>
+</scroll-view> -->
+
+<!-- <view class="menu_content">选中菜单{{activeIndex+1}}</view> -->
+
+<!-- <view class="menu_panel">
+ <view>
+  <view>当菜单个数小于等于 5 时，tab宽度按照屏幕尺寸均分；</view>
+  <view>当菜单个数大于 5 时，tab宽度为160rpx；超出部分可左滑滚动</view>
+ </view>
+</view> -->
+
+
+<view class="pd pt20 pm20 btm bgbs" wx:for="{{list}}" wx:key="unique" bindtap='tap_store_goods_info' data-gid='{{item.id}}' data-sid='{{item.s_id}}' data-oncode='{{item.oncode}}'>
+  <image src="{{item.u_avatarurl}}" class="dsdf_sdsfsg fl" mode="widthFix" wx:if="{{item.u_avatarurl}}"></image>
+  <view class="ov pl20">
+    <view class="dian fz32 pr" style=''>{{item.u_nickname}}
+    
+    <text class="fz22 cf dsf_s_sfgx3 ">{{item.crtime_str}}</text> 
+    </view>
+    
+    <!-- <view class="dian fz26">{{item.g_type}} - {{item.s_name}}</view> -->
+    <view class="fz24 z6 dian mt10">   
+     <text class='red'> 订单总价￥:{{item.total_money}}元</text>
+    </view>
+
+   
+   
+    <view class="dsf_df_dffx fz24 z6 mt10 pr">     
+       <text class="fz22 cf dsf_s_sfgx4 bgblue" wx:if="{{item.status=='0'}}">未支付</text>
+     <text class="fz22 cf dsf_s_sfgx4 bggreen" wx:elif="{{item.status=='1'}}">已支付</text>
+     <text class="fz22 cf dsf_s_sfgx4 bgred" wx:elif="{{item.status=='2'}}">已返回</text>
+
+     <text class="fz22 cf dsf_s_sfgx bgblue" wx:if="{{item.status=='1' && item.hexiao_use=='0'}}">未使用</text>
+     <text class="fz22 cf dsf_s_sfgx bggreen" wx:elif="{{item.status=='1' && item.hexiao_use=='1'}}">已核销</text>
+     <text class="fz22 cf dsf_s_sfgx bgred" wx:elif="{{item.status=='1' && item.hexiao_use=='2'}}">已返回</text>   
+
+     
+
+    </view>
+    <view class="dian fz28">订单详情:</view>
+    <view class="dian fz24" wx:for="{{item.infos}}" wx:for-item="inf" wx:key="unique">{{inf.g_name}}  {{inf.money_pay}}元 * {{inf.cnt_buy}}
+    
+<!--     
+    <view class="scand tc">
+      <canvas class="scand-img" hidden="{{canvasHidden}}"  canvas-id="mycanvas"/>
+     <view> {{item.oncode}}</view>
+   </view> -->
+    
+    </view>
+
+  </view>
+  <view class="qc"></view>
+</view>
+
+
+<block wx:if="{{is_no_list}}">
+<view style="border-top:1px solid #b3b3b3;margin-top:60rpx;text-align:center;width:520rpx;margin-left:auto;margin-right:auto;">
+ <text style='color:#b3b3b3;font-size:32rpx;padding:10rpx;background:#f4f4f4;position:relative;bottom:30rpx;'>没有更多了</text>
+ </view>
+</block>
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />

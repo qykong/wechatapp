@@ -1,0 +1,273 @@
+.ptext{
+  color:#575757;
+}
+/*msg 消息内容 conent*/
+.msg_container{
+display: flex;
+background: #ffffff;
+}
+
+.msg_user image{
+  width:80rpx;
+  height:80rpx;
+
+}
+
+.msg_conent{
+  background:#ffffff;
+ padding:10rpx 0;
+ text-align: left;
+}
+
+.msg_conent_name{
+  padding:2rpx;
+  color:#49667e;
+  font-size: 30rpx;
+  text-align: left;
+  }
+.msg_content_top{
+ display: flex;
+ justify-content: space-between;
+ padding:10rpx;
+}
+.nopadding{padding:0px!important;}
+
+.msg_conent_text{
+   padding:10rpx;
+   /* overflow:hidden; 
+text-overflow:ellipsis;
+display:-webkit-box; 
+-webkit-box-orient:vertical;
+-webkit-line-clamp:6;  */
+word-wrap:break-word;
+word-break: break-all;
+ 
+}
+
+.msg_conent_tag text{
+margin-left: 8rpx;
+}
+.msg_conent_tag_base{
+  background: #e6e1e1;
+  padding:8rpx;
+  border-radius:4rpx;
+  color:#49667e;
+  font-size: 30rpx;
+}
+
+.msg_conent_tag_lxta{
+  padding:10rpx 20rpx;
+  background: #1AAD16;
+
+  border-radius:4rpx;
+  color:#ffffff;
+  font-size: 24rpx;
+}
+
+.msg_conent_tag_bottom{
+ border-radius: 4rpx;
+  color: #49667e;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: flex-end;
+  padding: 4rpx 20rpx;
+  align-items: center;
+}
+.msg_conent_tag_bottom .msg_conent_tag_bottom_icon{
+ width:auto;
+  min-width:70rpx;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding:0 10rpx;
+  align-items: center;
+}
+.msg_conent_tag_bottom_icon image{
+  height:30rpx;
+  width: 30rpx;
+  margin-right: 10rpx;
+  padding: 4rpx 0rpx;
+}
+.msg_conent_tag_bottom .msg_conent_tag_default{
+    text-align: center;
+  display: inline-flex;
+  line-height: 20rpx;
+  height: 20px;
+  padding: 4rpx 0rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.msg_conent_tag_bottom image{
+ height:30rpx;
+  width: 30rpx;
+  margin-right:10rpx;
+}
+
+.msg_conent_tag_top{
+  background:red;
+  color: #ffffff;
+  padding:8rpx;
+  border-radius:4rpx;
+  font-size: 30rpx;
+}
+
+.msg_conent_img{
+  display: flex;
+   flex-wrap:wrap;
+ align-items:flex-start;
+ justify-content:flex-start;
+}
+.msg_icon{
+  width:98%;
+  text-align: center;
+  margin:10rpx 1%;  
+}
+
+
+.msg_icon image{
+ width:98%;
+}
+
+.msg_conent_gps{
+   font-size: 24rpx;
+   text-align: left;
+   color:#49667e;
+   margin-left: 20rpx;
+}
+.msg_conent_gps image{
+  height: 24rpx;
+  width: 24rpx;
+  margin-right:4rpx;
+}
+/*最底部*/
+.msg_conent_time{
+  padding:4rpx;
+  color:#777777;
+  font-size: 25rpx;
+}
+
+.msg_conent_goodimg_title{
+  width:70rpx;
+  font-size: 30rpx;
+  margin-left:10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.msg_conent_goodimg{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10rpx;
+   font-size: 24rpx;
+   text-align: left;
+   color:#49667e;
+   margin-left: 20rpx;
+}
+.msg_conent_goodimg .user_gd_av{
+  text-align: center;
+}
+.msg_conent_goodimg image{
+  height:80rpx;
+  width: 80rpx;
+  margin-right:4rpx;
+  border-radius: 50%;
+}
+.msg_conent_goodimg .user_gd_nickname{
+width:120rpx;
+text-align: center;
+overflow: hidden;
+white-space: nowrap;
+font-size: 20rpx;
+}
+.msg_conent_goodimg .user_gd{
+  margin-top: 10rpx;
+}
+
+
+.commodity_screen {
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ top: 0;
+ left: 0;
+ background: #000;
+ opacity: 0.2;
+ overflow: hidden;
+ z-index: 1000;
+ color: #fff;
+}
+.commodity_attr_box {
+ width: 100%;
+ overflow: hidden;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ z-index: 2000;
+ background: #fff;
+ padding-top: 20rpx;
+}
+
+.cmmts{
+ width: 100%;
+  background: #f8f8f8;
+  padding:10rpx 0;
+  
+
+}
+.cmmts text{font-size: 26rpx;}
+.cmt_main{padding-left:12rpx;}
+.cmt_parmain{padding-left:30rpx;}
+.plname{ color:#576b95;}
+
+.bottom_button{
+position:fixed;
+/* height:80rpx; */
+bottom:0;
+width:100%;
+
+/* border-radius:8rpx; */
+/* border: 1px solid red; */
+background: #ffffff;
+display: flex;
+justify-content: space-between;
+
+}
+/* .view_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  flex:1;
+  font-size:30rpx;
+   padding:20rpx 14rpx;
+} */
+.view_button{
+/* height: 100rpx;
+line-height:100rpx; */
+color: #ffffff;
+flex:1;
+font-size:30rpx;
+padding:6rpx;
+text-align: center;
+}
+
+.view_button image{
+  height:30rpx;
+  width: 30rpx;
+  margin: 0;
+  /* padding-right: 10rpx; */
+  /* margin-right: 10rpx;
+  padding: 4rpx 0rpx; */
+}
+.view_button view{
+  font-size:30rpx;
+
+  display: flex;
+  /* padding:14rpx; */
+  justify-content: center;
+  align-items: center;
+  border-radius:0;
+ 
+}

@@ -1,0 +1,115 @@
+<view class="pd pt20 pm20 bgff" bindtap='tap_store'>
+  <icon class="f_i dsf_ddinadf fl mt15" />
+  <view class="ov pl20 pr">
+    <view class="dian fz32 z6">
+      我是商家，点击入驻商圈
+    </view>
+    <view class="fz24 z9 mt10">
+      超低成本，本地宣传，简单有效，方便快捷！
+    </view>
+    <icon class="f_i dsf_rightsd" />
+  </view>
+
+  <view class="qc"></view>
+</view>
+
+<!-- 商家列表 -->
+<!-- <view class="xiang_banner">
+  <view class="banner_sfxc">
+    <view class="swiper_xdfg ">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="{{active_color}}" indicator-color="{{indicator}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view> -->
+
+ 
+<view class="dsf_dd_sdf_d cen pt20 pm20 bgbs mt10">
+  <view class="d_df_df_dfg fz26 view_flex"> 
+     <!-- <picker bindchange="bindshen" value="{{sn}}" range="{{shen}}" class="sdf_s_Sdgf" style='margin-right:6rpx;'>
+          <view class="picker">
+            {{shen[sn]}}
+          </view>
+        </picker> -->
+     <picker bindchange="bindPickerChange_store_m_type" value="{{store_m_type_idx}}" range="{{store_m_type_arr}}" class="sdf_s_Sdgf" style='margin-right:6rpx;'>         
+          <!-- <view class="picker" style='text-align:right;' wx:if="{{!store_m_type_select}}">全部品类</view> -->
+          <view class="picker" >{{store_m_type_arr[store_m_type_idx]}}</view>
+        </picker>
+    <icon class="f_i down_icon_s" />
+  </view>
+
+  <view class="d_df_df_dfg fz26 view_flex">  
+     <!-- <picker bindchange="bindshen" value="{{sn}}" range="{{shen_2}}" class="sdf_s_Sdgf" style='margin-right:6rpx;'>
+          <view class="picker">
+            {{shen_2[sn]}}
+          </view>
+      </picker> -->
+       <picker bindchange="bindPickerChange_store_p_type" value="{{store_p_type_idx}}" range="{{store_p_type_arr}}" class="sdf_s_Sdgf" style='margin-right:6rpx;'>
+         <view class="picker" style='text-align:right;' wx:if="{{!store_p_type_select}}">所有子品类</view>
+          <view class="picker"  wx:if="{{store_p_type_select}}">{{store_p_type_arr[store_p_type_idx]}}</view>
+        </picker>
+    <icon class="f_i down_icon_s" />
+  </view>
+  
+  <view class="d_df_df_dfg fz26 view_flex">
+    <!-- 筛选 -->
+      <picker bindchange="bindPickerChange_saxuan" value="{{saxuan_idx}}" range="{{saxuan_arr}}" class="sdf_s_Sdgf" style='margin-right:6rpx;'>
+          <view class="picker" style='text-align:right;' wx:if="{{!saxuan_select}}">综合排序</view>
+          <view class="picker" wx:if="{{saxuan_select}}">{{saxuan_arr[saxuan_idx]}}</view>
+      </picker>
+    <icon class="f_i down_icon_s" />
+  </view>  
+  <view class="qc"></view>
+</view> 
+
+
+<!-- 列表 -->
+<view class="pd pt20 pm20 btm bgbs" wx:for="{{list}}" wx:key="unique"  bindtap='tap_store_info' data-sid='{{item.id}}' data-oncode='{{item.oncode}}' data-s_name='{{item.s_name}}'>
+  <!-- <image src="../../resource/images/dsf_adfa.jpg" class="dsdf_sdsfsg fl" mode="center"></image> -->
+  <image wx:if="{{item.img_store_mentou}}" src="{{item.img_store_mentou}}" class="dsdf_sdsfsg fl" mode="scaleToFill"></image>
+  <view class="ov pl20">
+    <view class="dian fz32">{{item.s_name}}</view>
+    
+    <view class="dsf_Dfdfs">
+      <icon class="f_i cz dsf_sd_sf act" wx:for="{{item.score_m}}" wx:key="unique"/>
+      <icon class="f_i cz dsf_sd_sf " wx:for="{{item.score_p}}" wx:key="unique"/>
+      <text class="fz28 z6" wx:if="{{item.cnt_comment>0}}">
+      <text wx:if="{{item.score>0}}" class="fz24">{{item.score}}分</text></text>
+    </view>
+
+    <view class="fz24 z6 dian mt10">
+      {{item.store_p_type}} | {{item.loc_address}}
+    </view>
+    <view class="dsf_sd_sdfx">
+       <text>{{item.time_start}}</text>
+      <text wx:if="{{item.s_junjia>0}}"> ￥{{item.s_junjia}}元/人</text>
+    </view>
+    <view class="dsf_df_dffx fz24 z6 mt10 pr">
+      <!-- <icon class="df_sd_sdgx f_i cz" /> 新店开张办卡充1000送500 -->
+      <text class="fz22 cf dsf_s_sfgx">{{item.loc_juli}}KM</text>
+    </view>
+
+  </view>
+  <view class="qc"></view>
+</view>
+
+<block wx:if="{{is_no_list}}">
+<view style="border-top:1px solid #b3b3b3;margin-top:60rpx;text-align:center;width:520rpx;margin-left:auto;margin-right:auto;">
+ <text style='color:#b3b3b3;font-size:32rpx;padding:10rpx;background:#f4f4f4;position:relative;bottom:30rpx;'>没有更多了</text>
+ </view>
+</block>
+
+
+
+
+
+<!-- <import src="../../resource/templates/tmpl_foot.wxml"/>
+<template is="plug_foot"/> -->
+
+<!-- <import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" /> -->

@@ -1,0 +1,47 @@
+@import "../../../we7/resource/plugin/wxParse/wxParse.wxss";
+
+.logo{width: 100%;}
+.logo image{width: 100%;}
+.title{margin-bottom: 30rpx;font-size: 30rpx;font-weight: bold;}
+.content{margin-bottom:20rpx;font-size: 28rpx;width:98%;margin:auto 1%;}
+.time{width:98%;font-size: 24rpx;text-align: right;color: gray;padding-right: 10rpx;padding-top: 10rpx;}
+
+
+
+/*幻灯片*/
+.banner{
+width:100%;
+}
+.banner image{
+  width:100%;
+  height: 360rpx;
+}
+/*首页列表*/
+.menu_list{
+  background: #ffffff;
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+  align-items:flex-start;
+  justify-content:flex-start;
+  margin:10rpx;
+  padding:10rpx 0rpx;
+}
+
+.menu_list .menu_icon{
+  width:25%;
+  text-align: center;
+  height: 160rpx;
+  margin-bottom: 15rpx;
+}
+
+.menu_list .menu_icon image{
+  width:100rpx;
+  height:100rpx;
+}
+
+.menu_list .menu_text{
+   font-size: 26rpx;
+   height: 30rpx;
+   line-height: 30rpx;
+}

@@ -1,0 +1,6 @@
+<template name="temp_banner">
+<swiper-item>
+<image wx:if="{{item.is_sale==1 && item.audit_status==1 && item.sale_status==1 && item.sale_img!=''}}" src="{{item.sale_img}}" data-msg_type="{{item.msg_type}}" data-mid="{{item.mid}}" data-bid="{{item.id}}"  class="slide-image" bindtap="tapBanner_det"/>
+<image wx:else src="{{item.img}}" data-msg_type="{{item.msg_type}}" data-mid="{{item.mid}}" data-bid="{{item.id}}"  class="slide-image" bindtap="tapBanner_det"/>
+</swiper-item>
+</template>

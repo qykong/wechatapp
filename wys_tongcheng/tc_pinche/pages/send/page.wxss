@@ -1,0 +1,163 @@
+@import '../../../tc_store/resource/css/base_main.wxss';
+
+/*sheet 模拟*/
+page{
+  padding-bottom:20rpx;
+
+}
+.drawer_text {
+  text-indent: 1.2em;
+  padding: 0 10rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.mag_top {
+  margin-top: 27rpx;
+}
+
+
+/*content */
+
+.drawer_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 1px;
+  /* top:0; */
+  left: 0;
+  max-height: 700rpx;
+  z-index: 1001;
+  background: #fafafa;
+  /* margin: -150px 0 0 0; *//* margin-bottom:0px; */
+  border-radius: 3px;
+}
+
+.drawer_title {
+  padding: 40rpx;
+  font: 30rpx "microsoft yahei";
+  text-align: center;
+  border-bottom: 1px solid #e8e8ea;
+}
+
+.btn_ok {
+  padding: 10px;
+  font: 30rpx "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #e8e8ea;
+  color: #3cc51f;
+}
+
+.dsf_sd_stxc {
+  height: 320rpx;
+  background: #fff;
+}
+
+.dsf_sd_sdf {
+  padding-top: 107rpx;
+}
+
+.dsf_sd_sdf {
+  width: 50%;
+  float: left;
+}
+
+.dsf_sd_sdcv {
+  width: 69px;
+  height: 68px;
+  background-position: -257px -514px;
+}
+
+.success_d {
+  width: 26px;
+  height: 26px;
+  background-position: -11px -556px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  display: none;
+}
+
+.dsf_sd_sdf.act .success_d {
+  display: block;
+}
+
+.dsf_sd_sdf.act .dsf_sd_sdcv {
+  background-position: -76px -514px;
+}
+
+.dsf_sd_sdf.act .z6 {
+  color: #ff5a00;
+}
+
+.dsf_sd_sdcv.ab {
+  background-position: -165px -514px;
+}
+
+.dsf_sd_sdf.act .dsf_sd_sdcv.ab {
+  background-position: -9px -595px;
+}
+
+.dsf_ds_sfgf_d {
+  border: 1px solid #bfbfbf;
+  background: #fff;
+}
+
+.dsf_sd_sd_sf {
+  width: 50%;
+  float: left;
+}
+
+.dsf_sd_ds {
+  width: 11px;
+  height: 12px;
+  background-position: -89px -602px;
+  position: absolute;
+  left: -45rpx;
+  top: 40rpx;
+}
+
+.dsf_sd_ds.ab {
+  width: 11px;
+  height: 11px;
+  background-position: -110px -603px;
+}
+
+.dsf_sd_sd_sf.ab {
+  width: 100%;
+}
+
+.dsf_sd_ds.ac {
+  width: 9px;
+  height: 12px;
+  background-position: -135px -602px;
+}
+
+.dsf_sd_ds.ad {
+  width: 11px;
+  height: 13px;
+  background-position: -156px -601px;
+}
+
+.dsf_sd_ds.ae {
+  width: 11px;
+  height: 14px;
+  background-position: -180px -600px;
+}
+
+.dsf_sd_ds.af {
+  width: 13px;
+  height: 13px;
+  background-position: -199px -601px;
+}
+
+.que_fau {
+  background: #4a4c5b;
+  color: #4a4c5b;
+}
+
+.dsf_dd_df_dgg2 {
+  height: 105rpx;
+  padding-left: 90rpx;
+  line-height: 105rpx;
+}

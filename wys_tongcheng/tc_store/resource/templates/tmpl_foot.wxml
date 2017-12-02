@@ -1,0 +1,32 @@
+<template name="plug_foot">
+<view class="hggfsdf_sd box cen">
+  <navigator class="box_a fz28" open-type="switchTab" url="../../../pages/index/index">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf cz" />
+    </view>
+    同城
+  </navigator>
+  <navigator class="box_a fz28 act">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ab cz" />
+    </view>
+    商家
+  </navigator>
+  <navigator class="box_a ">
+    <i class="f_i adsfsf_sd"></i>
+  </navigator>
+ <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ac cz" />
+    </view>
+    拼车
+  </navigator>
+  <navigator class="box_a fz28 ">
+    <view class="dsf_df_dsfg">
+      <icon class="f_i df_asddf ad cz" />
+    </view>
+    我的
+  </navigator>
+
+</view>
+</template>

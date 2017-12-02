@@ -1,0 +1,228 @@
+<!-- 商家详情页 -->
+<view class="xiang_banner" wx:if="{{it.imgs_list_arr.length>0}}">
+  <!-- banner -->
+  <view class="banner_sfxc">
+    <view class="swiper_xdfg ">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-active-color="{{active_color}}" indicator-color="{{indicator}}">
+        <block wx:for="{{it.imgs_list_arr}}" wx:key="unique">
+          <swiper-item>
+            <image wx:if="{{item}}" src="{{item}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
+
+
+<view class="pd pt20 pm20 bgff bbm">
+  <image wx:if="{{it.img_store_mentou}}" src="{{it.img_store_mentou}}" class="dsf_dsd_Sdggx fl" mode="aspectFit"></image>
+  <view class="ov pl20 pr">
+    <view class="dsf_sd_sd fz28" wx:if="{{it.s_junjia>0}}">￥{{it.s_junjia}}/人</view>
+
+    <view class="fz36">{{it.s_name}}</view>
+    <view class="dsf_Dfdfs">
+      <icon class="f_i cz dsf_sd_sf act" wx:for="{{it.score_m}}" wx:key="unique"/>
+      <icon class="f_i cz dsf_sd_sf " wx:for="{{it.score_p}}" wx:key="unique"/>
+      <text class="fz28 z6" wx:if="{{it.cnt_comments>0}}">
+      <text wx:if="{{it.score_all>0}}" class="fz24">{{it.score_all}}分</text> {{it.cnt_comments}}人点评</text>
+    </view>
+    <view class="fz26 z6 dsf_sd_sdfx">
+      营业: <text class='time_yingye'>{{it.time_start}}</text>
+      <text>  {{it.cnt_look}}人浏览</text>
+    </view>
+  </view>
+  <view class="qc"></view>
+</view>
+
+<view class="dsf_df_sdf_d pd fz26 pr bbm" bindtap="open_map" data-lat="{{it.loc_lat}}" data-lon="{{it.loc_lon}}">
+  <icon class="f_i map_sd_sdf cz mr10" /> {{it.loc_address}}
+  <input class="f_i ring_icon_s" />
+</view>
+<view class="dsf_df_sdf_d pd fz26 pr" bindtap='tap_phone' data-s_phone='{{it.s_phone}}'>
+  <icon class="f_i map_sd_sdf cz mr10 ab" /> {{it.s_phone}}
+  <input class="f_i ring_icon_s" />
+</view>
+
+<view class="mt20 bgff" wx:if="{{is_sale}}">
+  <view class=" sdf_sf_sdf bbm fz30">
+    <text class="pd">在售产品</text>
+  </view>
+
+  <view class="pd pt20 pm20 bgff bbm" wx:for="{{it.goods_list}}" wx:key="unique" bindtap='tap_store_goods_info' data-gid='{{item.id}}' data-sid='{{item.s_id}}' data-oncode='{{item.oncode}}'>
+    <image wx:if="{{item.img_store_mentou}}" src="{{item.img_store_mentou}}" class="dsf_dsd_Sdggx fl"></image>
+    <view class="ov pl20 pr">
+      <view class="fz30 z6">{{item.g_name}}</view>
+      <view class="fz28 mt10 flex_view"> 
+        <!-- <text class="ye">优惠价 ￥209</text>
+        <text class="z9 del_df ml20">门店价 ￥1206</text> -->
+          <text class='fz26 g_type'>{{item.g_type}}</text>
+         
+         <text class='ye'  wx:if="{{item.money_mengshi!='0'}}">优惠价￥:{{item.money_sale}}</text>
+         <text wx:else>售价￥:{{item.money_sale}}</text>
+         <text wx:if="{{item.money_mengshi!='0'}}" class="gray line-through">  门市价￥:{{item.money_mengshi}}</text> 
+         
+      </view>
+
+      <view class="fz28 mt10 pr">
+        <!-- <text class="z9">收藏：88人</text> ml20 -->
+        <text class="z9">已售：{{item.g_cnt_sale}}</text>
+        <navigator class="liji_sdgfx yj4">立即购买</navigator>
+      </view>
+    </view>
+    <view class="qc"></view>
+  </view>
+
+</view>
+
+
+<view class="bgff pd mt20 pm20" wx:if="{{it.rmk_store}}">
+  <view class="fz32 pt20 pm20 bbm pr">
+    店铺介绍
+    <!-- <icon class="f_i dsf_s_Sdf_df" /> -->
+  </view>
+
+  <!-- <image src="../../resource/images/dsf_adfa.jpg" class="dsf_sd_sdfgx"></image>
+ -->
+
+  <view class="fz26  dsf_xiuasffx pt20 pm20">
+   {{it.rmk_store}}
+  </view>
+  
+  <!--
+  <view class="fz26  dsf_xiuasffx pt20 pm20">
+    奥体中心游泳跳水馆是亚运会游泳跳水项目的主要比赛场 馆，将举行游泳、跳水和现代五项游泳比赛及亚残会游泳比赛， 赛后将作为训练基地，满足国家队冬训及亚运会之后举行重大 赛事的要求。
+  </view>
+ <view class="dsf_sdssf mt20"> 公交：奥林匹克体育中心北门站：506路A、506路、51路夜 车、52路夜车、548路、564路、B22路、B26路
+  </view>
+
+  <view class="dsf_sdssf mt20">环场路西站：506路A、506路、508路快线、548路、 564路A、564路、574路
+  </view>
+  <view class="dsf_sdssf mt20">
+    地铁：黄村站
+  </view>
+   -->
+</view>
+
+
+<view class="bgff pd mt20 pm20" wx:if="{{it.rmk_goumai}}">
+  <view class="fz32 pt20 pm20 bbm pr">
+    购买需知
+    <!-- <icon class="f_i dsf_s_Sdf_df" /> -->
+  </view>
+
+  <!-- <image src="../../resource/images/dsf_adfa.jpg" class="dsf_sd_sdfgx"></image>
+ -->
+
+  <view class="fz26  dsf_xiuasffx pt20 pm20">
+   {{it.rmk_goumai}}
+  </view>
+  
+  <!--
+  <view class="fz26  dsf_xiuasffx pt20 pm20">
+    奥体中心游泳跳水馆是亚运会游泳跳水项目的主要比赛场 馆，将举行游泳、跳水和现代五项游泳比赛及亚残会游泳比赛， 赛后将作为训练基地，满足国家队冬训及亚运会之后举行重大 赛事的要求。
+  </view>
+ <view class="dsf_sdssf mt20"> 公交：奥林匹克体育中心北门站：506路A、506路、51路夜 车、52路夜车、548路、564路、B22路、B26路
+  </view>
+
+  <view class="dsf_sdssf mt20">环场路西站：506路A、506路、508路快线、548路、 564路A、564路、574路
+  </view>
+  <view class="dsf_sdssf mt20">
+    地铁：黄村站
+  </view>
+   -->
+</view>
+
+<view class="bgff pd mt20 " wx:if="{{it.cnt_comments>0}}">
+  <view class="fz32 pt20 pm20 bbm pr">
+    客户点评({{it.cnt_comments}})
+    <icon class="f_i dsf_s_Sdf_df"  bindtap='tap_comment_list' data-type='store' data-val='{{it.id}}' data-name='{{it.s_name}}'/>
+  </view>
+  <view class=" bgff pt20 pm20 mt20 bbm" wx:for="{{it.cnt_comment_all}}" wx:key="unique" wx:for-item="ct" wx:for-index="idx">
+    <image wx:if="{{ct.u_avatarurl}}" src="{{ct.u_avatarurl}}" class="use_iconsd fl" mode="scaleToFill"></image>
+    <view class="ov pl20">
+      <view class="d_sdf_sfgx">
+        <text class="fz30">{{ct.u_nickname}}</text>
+        <text class="fz24 fr">{{ct.crtime}}</text>
+        <view class="dsf_Dfdfs">        
+          <icon class="f_i cz dsf_sd_sf act" wx:for="{{ct.score_m}}" wx:key="unique" />
+          <icon class="f_i cz dsf_sd_sf " wx:for="{{ct.score_p}}" wx:key="unique"/>
+        </view>
+        <view class="qc pt20 fz30 ">
+         {{ct.mcontent}}
+        </view>
+        <view class="ds_sd_dff_ddf mt20">
+        <block  wx:for="{{ct.imgs_list}}" wx:key="unique" wx:for-item="ctimg">
+        <image wx:if="{{ctimg}}" mode="scaleToFill" bindtap="dsddf_xf" src="{{ctimg}}" bindtap='previewImage' data-img="{{ctimg}}" data-imgs="{{ct.imgs_list}}"></image>
+        </block>
+
+        </view>
+
+        <view class="pd pt20 pm20 dsf_s_sdfgxc mt20" wx:if="{{ct.comments_p.length>0}}">
+          <view class="fz30" wx:for="{{ct.comments_p}}" wx:key="unique" wx:for-item="pct">
+            <text class="ls">{{pct.u_nickname}}:</text><text class='fz28 textbreak cbk'>{{pct.mcontent}}</text>
+          </view>
+        </view>
+
+<view class='fz28 gray2' bindtap='tap_comment' data-s_id='{{ct.s_id}}' data-oncode="{{ct.oncode}}" data-goods_id='{{ct.goods_id}}' data-attr='{{ct.id}}' data-idx='{{idx}}'>回复</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+
+
+
+<!-- 详情底部 -->
+<!-- <view class="xqbottom_s box cen fz30">
+  <navigator url="#" class="box_a bghk">
+  刘老师(商家)
+  </navigator>
+    <navigator url="#" class="box_a">
+      <view class="dsf_sd_sdf">
+          <icon class="f_i diyt_sd cz" />
+      </view>
+      <text class="cf fz28">电话</text>
+  </navigator>
+     <navigator url="#" class="box_a">
+      <view class="dsf_sd_sdf">
+          <icon class="f_i diyt_sd cz ab" />
+      </view>
+      <text class="cf fz28">评论</text>
+  </navigator>
+
+</view> -->
+
+
+
+
+
+<!--评论-->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+<form bindsubmit="formSubmit_send_comments" report-submit="true">
+<input type="text" value="{{oncode}}" name="oncode" style="display:none;" />
+<input type="text" value="{{s_id}}" name="s_id" style="display:none;" />
+<input type="text" value="{{goods_id}}" name="goods_id" style="display:none;" />
+
+<input type="text" value="{{pl_ctype}}" name="pl_ctype" style="display:none;" />
+<input type="text" value="{{attr}}" name="attr" style="display:none;" />
+
+
+<view class="classname" style="display:flex;padding:10rpx 30rpx 30rpx 30rpx;">
+<view class="classname" style="width:85%;margin-right:20rpx;">
+<input type="text" name="mcontent" placeholder="评论{{plname}}" style="border-bottom: 3rpx solid #1AAD16;width:100%;height:70rpx;"/>
+</view>
+
+<view class="classname" style="width:15%;">
+<button formType="submit" type="primary" size="mini" bindtap="send_comments" style="padding:4rpx 20rpx;width:100%;">发送</button>
+</view>
+</view>
+</form>
+</view>
+<!--评论 结束-->
+
+<import src="../../../resource/templates/goHome.wxml"/>
+<template is="navigateBack" />

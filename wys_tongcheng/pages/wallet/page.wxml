@@ -1,0 +1,62 @@
+<view class="user_top">  
+  <view class="user_sd_sfg" wx:if="{{ubinfo.avatarUrl}}">
+    <image src="{{ubinfo.avatarUrl}}" class=" cz"></image>
+   
+  </view>
+  <view class="user_sd_sfg cf">
+    <view class="fz35">{{ubinfo.nickName}}</view>   
+  </view>
+
+   <view class="user_sd_sfg2 cf">
+    <view class="fz28">
+    <view>帐户:{{account}}元 
+    
+    </view>
+    <view wx:if="{{integral>0}}">积分:{{integral}}</view>  
+    </view>   
+  </view>
+  
+</view>
+<view class='ml10 pt20 pb20 fz28 c57'>帐户操作</view>
+<view class="menu_list mt10">
+<view wx:for="{{mlist}}" wx:key="unique" class="menu_icon" wx:if="{{item.st=='1'}}">
+<navigator url='{{item.url}}' open-type="{{item.otype}}" hover-class="none" wx:if="{{item.m!='' && item.st=='1'}}">
+<image wx:if="{{item.icon}}" src="{{item.icon}}"></image>
+<view class="menu_text">{{item.m}}</view>
+</navigator>
+</view>
+</view>
+
+
+<view class='ml10 pt20 pb20 fz28 c57'>消费信息</view>
+<view class="menu_list mt10">
+<view wx:for="{{mlist2}}" wx:key="unique" class="menu_icon" wx:if="{{item.st=='1'}}">
+<navigator url='{{item.url}}' open-type="{{item.otype}}" hover-class="none" wx:if="{{item.m!='' && item.st=='1'}}">
+<image wx:if="{{item.icon}}" src="{{item.icon}}"></image>
+<view class="menu_text">{{item.m}}</view>
+</navigator>
+</view>
+</view>
+
+
+
+<!-- 
+<view class="container">
+<view class='view_pay_main' bindtap='tap_order' data-ordertype='msg' data-title='消息付费或置顶'>
+<view class='view_pay_money'>消息付费或置顶</view></view>
+
+<view class='view_pay_main' bindtap='tap_order' data-ordertype='banner' data-title='广告位出租'>
+<view class='view_pay_money'>广告位出租</view></view>
+<view wx:if="{{sett.pay_isopen=='1'}}" class='view_pay_main' bindtap='tap_order' data-ordertype='pay' data-title='充值'>
+<view class='view_pay_money'>充值</view></view>
+
+<view wx:if="{{sett.shang_isopen=='1'}}" class='view_pay_main' bindtap='tap_order' data-ordertype='shang_rem' data-title='打赏'>
+<view class='view_pay_money'>打赏</view></view>
+
+<view wx:if="{{sett.shang_isopen=='1'}}" class='view_pay_main' bindtap='tap_order' data-ordertype='shang_add' data-title='被打赏'>
+<view class='view_pay_money'>被打赏</view></view>
+</view> -->
+
+
+<import src="../../resource/templates/goHome.wxml"/>
+<template is="navigateBack"/>

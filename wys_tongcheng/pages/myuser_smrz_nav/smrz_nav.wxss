@@ -1,0 +1,8 @@
+.container{width: 100%;}
+.tip_red{text-indent:1.2em;font-size: 30rpx;margin:20rpx;color:#003366}
+.tip_height{margin-bottom: 100rpx;}
+button{width: 90%;margin-top:20rpx;}
+
+.t_rmk{
+  height: 50rpx;
+}
