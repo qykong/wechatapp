@@ -30,3 +30,45 @@ kongquyu@gmail.com
 
 - [Quyu Kong](https://github.com/qykong)
 - [CACppuccino](https://github.com/CACppuccino)
+
+### WeChat IDE
+
+#### What's this?
+An [IDE](https://mp.weixin.qq.com/debug/wxadoc/introduction/index.html?t=201758) (integrated development environment)  is a set of programming tools for writing an application. It consists of a code editor, a compiler and a debugger, accessible through a single graphical user interface.
+
+Download the WeChat IDE here:
+ [Mac](https://servicewechat.com/wxa-dev-logic/download_redirect?type=darwin&from=mpwiki), [Windows 64](https://servicewechat.com/wxa-dev-logic/download_redirect?type=darwin&from=mpwiki), [Windows 32](https://servicewechat.com/wxa-dev-logic/download_redirect?type=ia32&from=mpwiki)
+
+#### Quick tutorial
+
+Here is a quick tutorial to master the WeChat IDE and take the most from it.
+
+A **Code editor** with the tree of your files on the side and a **Simulator** on the left, which displays the preview of your app.
+![IDE Wechat home](assets/code-editor.png)
+
+Here is a complete list of buttons to perform tasks when you are in development:
+
+![IDE cta](assets/ide-home.png)
+
+**1. 	Profile:** click on it to log out from the IDE.
+**2.	Code Editing**
+**3.	Debug / Inspect:** see below.
+**4.	Project information:** see below.
+**5.	Compiler:** Can be usefull to compile the app when the auto-refresh of the view is not working.
+![compilator settings](assets/compilator-modal.png)  
+
+**6.  Scene value**  
+**7.  Cache**    
+**8.  Shut down:**  Quit the project you are on and move toward another one.   
+**9.  Hide the simulator**  
+**10. Devices:** It gives a list of devices to test mini-program responsivness.  
+**11.  You can work on:** wifi, 4G, 3G, 2G.  
+**12.  Hide arborescence**  
+**13.  Manage your files:**  Search, add and delete a folder or a file.
+
+
+
+**Debugger / Inspector:**
+This tool is an important part of the IDE, it looks like the good old *Chrome DevTools*.
+![IDE debugger](assets/debugger.png)
+
