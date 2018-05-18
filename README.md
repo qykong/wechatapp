@@ -44,18 +44,18 @@ Download the WeChat IDE here:
 Here is a quick tutorial to master the WeChat IDE and take the most from it.
 
 A **Code editor** with the tree of your files on the side and a **Simulator** on the left, which displays the preview of your app.
-![IDE Wechat home](assets/code-editor.png)
+![IDE Wechat home](how to build a miniprogram/code-editor.png)
 
 Here is a complete list of buttons to perform tasks when you are in development:
 
-![IDE cta](assets/ide-home.png)
+![IDE cta](how to build a miniprogram/ide-home.png)
 
 **1. 	Profile:** click on it to log out from the IDE.
 **2.	Code Editing**
 **3.	Debug / Inspect:** see below.
 **4.	Project information:** see below.
 **5.	Compiler:** Can be usefull to compile the app when the auto-refresh of the view is not working.
-![compilator settings](assets/compilator-modal.png)  
+![compilator settings](how to build a miniprogram/compilator-modal.png)  
 
 **6.  Scene value**  
 **7.  Cache**    
