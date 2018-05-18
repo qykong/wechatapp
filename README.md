@@ -52,8 +52,8 @@ Here is a complete list of buttons to perform tasks when you are in development:
 
 **1. 	Profile:** click on it to log out from the IDE.
 **2.	Code Editing**
-**3.	Debug / Inspect:** see below.
-**4.	Project information:** see below.
+**3.	Debug / Inspect:** 
+**4.	Project information:** 
 **5.	Compiler:** Can be usefull to compile the app when the auto-refresh of the view is not working.
 ![compilator settings](how to build a miniprogram/compilator-modal.png)  
 
