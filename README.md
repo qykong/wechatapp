@@ -8,10 +8,16 @@ There is large debate – *and many clickbaits* – about how practical these ap
 
 Got ideas of services you would like to deploy in WeChat asap? Have basic knowledge of Javascript and want to experiment with this framework? Got lost in the Google translation of the doc? Need a small boost to decrypt what is possible or not? Hello and welcome.
 
+#### Description of our project
+Actually this is a information platform and community website. Classified ads are totoally free for depending on the product category and the geographical market. It is an online classified website. You can sale or purchase things on it. First you do not have to . Complete your profile then click post an ad, choose category set your price and image of a product.
+
 ### Contribute to this Wiki
-If you want to contribute, you can send a Pull Request [here](https://github.com/apelegri/wechat-miniprogram-wiki/pulls) or give us a shout on shanghai(at)lewagon.com for suggestions!
+If you want to contribute, you can send a Pull Request or contact us by email.
+
+### Contact information
+kongquyu@gmail.com
 
 ### Contributors
 
-- [Nathan Lee](https://github.com/kwnath)
-- [Stephane Delgado](https://github.com/stephanedelgado)
+- [Quyu Kong](https://github.com/qykong)
+- [CACppuccino](https://github.com/CACppuccino)
