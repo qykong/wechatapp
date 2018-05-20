@@ -1,6 +1,6 @@
 # WeChat Mini-programs Wiki
 
-### PREFACE
+### What is Wechat?
 China’s top messaging app WeChat rolled out something quite radical: mini-programs. Embedded apps which require no download, no install. Open, use, share, done!
 
 ### What are WeChat mini-programs?
@@ -12,15 +12,13 @@ Here are a few examples of WeChat mini programs.
 + The shared-bike company Mobike has a mini-program enabling users to locate bikes, unlock them and top-up their account
 + Tesla has a mini-program enabling users to locate charging stations, schedule a test-drive and share their experiences about driving a Tesla car
 
-
-### Yes, it's not perfect...
-There is large debate – *and many clickbaits* – about how practical these apps are... Indeed the framework provided to developers is only at infancy stage, still limited, and honestly a bit frustrating. Nevertheless Tencent is investing unprecedented resources into the adoption of this channel, building momentum, and opening opportunities to the first-movers. We believe that these hackers may find quick-wins if they dare to give it a try.
-
-
 ### Description of our project
-Actually this is a information platform and community website. Classified ads are totoally free for depending on the product category and the geographical market. It is an online classified website. You can sale or purchase things on it. First you do not have to . Complete your profile then click post an ad, choose category set your price and image of a product.
+Actually this is a information platform and community application. It is an online classified website. You can sale or purchase things on it. First you do not have to . Complete your profile then click post an ad, choose category set your price and image of a product and it is totally free.
+![Main page](https://github.com/hugh1209/wechatapp/blob/master/Screenshot/1526779406(1).png)
+![Category page](https://github.com/hugh1209/wechatapp/blob/master/Screenshot/1526779437(1).png)
+![Home page](https://github.com/hugh1209/wechatapp/blob/master/Screenshot/1526779464(1).png)
 
-### Contribute to this Wiki
+### How to contribute to this Wiki
 If you want to contribute, you can send a Pull Request or contact us by email.
 
 ### Contact information
@@ -30,45 +28,15 @@ kongquyu@gmail.com
 
 - [Quyu Kong](https://github.com/qykong)
 - [CACppuccino](https://github.com/CACppuccino)
+- [Wangyang Luo](https://github.com/hugh1209)
 
-### WeChat IDE
+### How to get started?
 
-#### What's this?
-An [IDE](https://mp.weixin.qq.com/debug/wxadoc/introduction/index.html?t=201758) (integrated development environment)  is a set of programming tools for writing an application. It consists of a code editor, a compiler and a debugger, accessible through a single graphical user interface.
+#### What's Wechat IDE
+An [IDE](https://mp.weixin.qq.com/debug/wxadoc/introduction/index.html?t=201758) is a set of programming tools for writing an application. It consists of a code editor, a compiler and a debugger, accessible through a single graphical user interface.
 
 Download the WeChat IDE here:
  [Mac](https://servicewechat.com/wxa-dev-logic/download_redirect?type=darwin&from=mpwiki), [Windows 64](https://servicewechat.com/wxa-dev-logic/download_redirect?type=darwin&from=mpwiki), [Windows 32](https://servicewechat.com/wxa-dev-logic/download_redirect?type=ia32&from=mpwiki)
 
-#### Quick tutorial
 
-Here is a quick tutorial to master the WeChat IDE and take the most from it.
-
-A **Code editor** with the tree of your files on the side and a **Simulator** on the left, which displays the preview of your app.
-![IDE Wechat home](https://github.com/hugh1209/wechatapp/blob/master/how%20to%20build%20a%20miniprogram/code-editor.png)
-
-Here is a complete list of buttons to perform tasks when you are in development:
-
-![IDE cta](https://github.com/hugh1209/wechatapp/blob/master/how%20to%20build%20a%20miniprogram/ide-home.png)
-
-**1. 	Profile:** click on it to log out from the IDE.
-**2.	Code Editing**
-**3.	Debug / Inspect:** 
-**4.	Project information:** 
-**5.	Compiler:** Can be usefull to compile the app when the auto-refresh of the view is not working.
-![compilator settings](https://github.com/hugh1209/wechatapp/blob/master/how%20to%20build%20a%20miniprogram/compilator-modal.png)  
-
-**6.  Scene value**  
-**7.  Cache**    
-**8.  Shut down:**  Quit the project you are on and move toward another one.   
-**9.  Hide the simulator**  
-**10. Devices:** It gives a list of devices to test mini-program responsivness.  
-**11.  You can work on:** wifi, 4G, 3G, 2G.  
-**12.  Hide arborescence**  
-**13.  Manage your files:**  Search, add and delete a folder or a file.
-
-
-
-**Debugger / Inspector:**
-This tool is an important part of the IDE, it looks like the good old *Chrome DevTools*.
-![IDE debugger](assets/debugger.png)
 
