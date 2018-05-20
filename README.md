@@ -20,7 +20,7 @@ Actually this is a information platform and community application. It is an onli
 ![Category page](https://github.com/hugh1209/wechatapp/blob/master/Screenshot/1526779437(1).png)
 ![Home page](https://github.com/hugh1209/wechatapp/blob/master/Screenshot/1526779464(1).png)
 
-### How to contribute to this Wiki
+### How to contribute to this project
 If you want to contribute, you can send a Pull Request or contact us by email.
 
 ### Contact information
