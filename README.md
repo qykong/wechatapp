@@ -14,6 +14,8 @@ Here are a few examples of WeChat mini programs.
 
 ### Description of our project
 Actually this is a information platform and community application. It is an online classified website. You can sale or purchase things on it. First you do not have to . Complete your profile then click post an ad, choose category set your price and image of a product and it is totally free.
+
+
 ![Main page](https://github.com/hugh1209/wechatapp/blob/master/Screenshot/1526779406(1).png)
 ![Category page](https://github.com/hugh1209/wechatapp/blob/master/Screenshot/1526779437(1).png)
 ![Home page](https://github.com/hugh1209/wechatapp/blob/master/Screenshot/1526779464(1).png)
